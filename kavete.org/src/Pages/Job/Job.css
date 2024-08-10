@@ -1,0 +1,60 @@
+.spinner{
+    display: grid;
+    place-self: center;
+    min-height: 80vh;
+}
+.spin{
+    width:65px;
+    height:65px;
+    place-self: center;
+    border: 5px solid #bdbdbd;
+    border-top-color: #4500c6;
+    border-radius: 50%;
+    animation: rotate 2s infinite;
+}
+@keyframes rotate{
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.job{
+    padding:0 20px;
+}
+.job-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+    margin: 100px auto;
+    margin-bottom: 50px;
+}
+.job-name img{
+    max-width: 100px;
+    border-radius: 50%;
+}
+.job-name p b{
+    font-size: 40px;
+    font-weight: 500;
+}
+.job-chart{
+    max-width: 600px;
+    height: 250px;
+    margin: auto;
+}
+.job-info{
+    max-width: 600px;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+}
+.job-info ul{
+    list-style: none;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #5f5d5f;
+}
+.job-info ul li{
+    font-weight:300;
+}
