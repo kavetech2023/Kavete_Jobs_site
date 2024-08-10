@@ -7,6 +7,7 @@ import Features from "./Pages/Features/Features";
 import Pricing from "./Pages/Pricing/Pricing";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/job/:jobId" element={<Job />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
