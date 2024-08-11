@@ -29,6 +29,18 @@
     margin: 100px auto;
     margin-bottom: 50px;
 }
+.job-description{
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+.job-description h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 70px;
+}
 .job-name img{
     max-width: 100px;
     border-radius: 50%;
@@ -44,7 +56,7 @@
 }
 .job-info{
     max-width: 600px;
-    margin: 200px auto;
+    margin: 80px auto;
     display: flex;
     flex-direction: column;
 }
@@ -57,4 +69,14 @@
 }
 .job-info ul li{
     font-weight:300;
+}
+.btn{
+    border: none;
+    background: #7927ff;
+    color:white;
+    font-size:16px;
+    padding:10px 30px;
+    border-radius: 5px;
+    cursor:pointer;
+    margin-top:20px;
 }
