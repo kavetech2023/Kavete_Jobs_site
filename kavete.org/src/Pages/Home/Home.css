@@ -43,6 +43,7 @@
 }
 .job-table{
     max-width: 800px;
+    color:black;
     margin: 20px auto;
     background: white;
     border-radius: 15px;
@@ -53,7 +54,12 @@
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
     padding:15px 20px;
     align-items: center;
-    border-bottom: 1px solid #3c3c3c;
+    border-bottom: 1px solid #676767;
+}
+.table-layout:hover{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    background:#ccc;
+
 }
 .table-layout:last-child{
     border: none;

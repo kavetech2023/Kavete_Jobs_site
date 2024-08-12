@@ -32,7 +32,13 @@ const Job = () => {
     );
   } else {
     return (
-      <motion.div className="job" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+      <motion.div  initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+
+<div className="hero">
+            <h1>{jobData.title}</h1>
+            <p >Welcome to the Africa's largest Jobs board. Sign up to explore more about jobs.</p>
+        </div>
+
 
 <div className="app-box">
         <div className="job-name">
