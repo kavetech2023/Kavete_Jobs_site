@@ -14,3 +14,9 @@ a{
   color:white;
   background: linear-gradient(#0b004e, #1d152f, #002834);
 }
+@media (max-width: 500px){
+  .app{
+    padding: 0 10px;
+    min-height: fit-content;
+  }
+}

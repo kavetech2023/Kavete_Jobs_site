@@ -59,8 +59,28 @@ const Job = () => {
             <li>{jobData.location}</li>
           </ul>
           <ul>
-            <li><b>Salary</b></li>
-            <li>{jobData.salary}</li>
+            <li><b>Qualifications:</b></li>
+            <li>{jobData.qualifications}</li>
+          </ul>
+          <ul>
+            <li><b>Key Skills:</b></li>
+            <li>{jobData.key_skills}</li>
+          </ul>
+          <ul>
+            <li><b>Responsibilities:</b></li>
+            <li>{jobData.responsibilities}</li>
+          </ul>
+          <ul>
+            <li><b>Benefits:</b></li>
+            <li>{jobData.benefits}</li>
+          </ul>
+          <ul>
+            <li><b>Perks:</b></li>
+            <li>{jobData.perks}</li>
+          </ul>
+          <ul>
+            <li><b>Link:</b></li>
+            <li><a href={`${jobData.link}`}>Go to Page</a></li>
           </ul>
 
           <button className="btn">Generate Tailored CV</button>

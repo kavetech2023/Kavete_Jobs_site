@@ -14,6 +14,6 @@ createRoot(document.getElementById('root')).render(
         <App />
       </JobContextProvider>
     </BrowserRouter> 
-  </StrictMode>,
+  </StrictMode>
   </GoogleOAuthProvider>
 )
