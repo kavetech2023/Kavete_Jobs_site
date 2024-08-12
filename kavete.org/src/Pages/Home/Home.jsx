@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import './Home.css'
 import { JobContext } from '../../Context/JobContext';
 import { Link } from 'react-router-dom';
+import {motion} from "framer-motion";
 
 const Home = () => {
 
@@ -31,7 +32,7 @@ const Home = () => {
     },[allJobs]);
 
   return (
-    <div className='home'>
+    <motion.div className='home' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
         <div className="hero">
             <h1>Largest Africa Job Board</h1>
             <p >Welcome to the Africa's largest Jobs board. Sign up to explore more about jobs.</p>
@@ -76,7 +77,8 @@ const Home = () => {
                 </Link>
             ))}
         </div>
-    </div>
+        </motion.div>
+    
   )
 }
 

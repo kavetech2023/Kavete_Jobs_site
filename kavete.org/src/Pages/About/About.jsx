@@ -1,9 +1,11 @@
 import React from 'react'
 import './About.css'
+import {motion} from "framer-motion";
+
 
 const About = () => {
   return (
-    <div><h1>About</h1></div>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}><h1>About</h1></motion.div>
   )
 }
 

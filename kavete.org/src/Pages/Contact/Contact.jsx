@@ -1,9 +1,10 @@
 import React from 'react'
 import './Contact.css'
+import {motion} from "framer-motion";
 
 const Contact = () => {
   return (
-    <div><h1>Contact</h1></div>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}><h1>Contact</h1></motion.div>
   )
 }
 

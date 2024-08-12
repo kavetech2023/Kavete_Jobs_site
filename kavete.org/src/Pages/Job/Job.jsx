@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { jobs } from '../../Data/data'
 import Charts from "../../Components/Charts/Charts";
+import {motion} from "framer-motion";
 
 const Job = () => {
   const { jobId } = useParams();
@@ -31,7 +32,7 @@ const Job = () => {
     );
   } else {
     return (
-      <div className="job">
+      <motion.div className="job" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
 
 
         <div className="job-name">
@@ -64,7 +65,7 @@ const Job = () => {
 
           <button className="btn">Generate Tailored CV</button>
         </div>
-      </div>
+      </motion.div>
     );
   }
 };

@@ -2,32 +2,12 @@ import React, { useContext } from "react";
 import "./Navbar.css";
 import { JobContext } from "../../Context/JobContext";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
+
 
 const Navbar = () => {
-  const { setlanguage } = useContext(JobContext);
 
-  const languageChange = (e) => {
-    switch (e.target.value) {
-      case "En":
-        setlanguage({
-          languages: "English",
-          languageCode: "en",
-        });
-        break;
-      case "Swh":
-        setlanguage({
-          languages: "Swahili",
-          languageCode: "swh",
-        });
-        break;
-      default:
-        setlanguage({
-          languages: "English",
-          languageCode: "en",
-        });
-        break;
-    }
-  };
   return (
     <div className="navbar">
       <Link to={"/"}>
@@ -52,13 +32,7 @@ const Navbar = () => {
         </Link>
       </ul>
       <div className="nav-right">
-        <select onChange={languageChange}>
-          <option value="En">English</option>
-          <option value="Swh">Swahili</option>
-        </select>
-        <button>
-          Sign up <span>+</span>
-        </button>
+          <button>Share Job</button>
       </div>
     </div>
   );

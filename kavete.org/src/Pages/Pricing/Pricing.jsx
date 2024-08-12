@@ -1,9 +1,10 @@
 import React from 'react'
 import './Pricing.css'
+import {motion} from "framer-motion";
 
 const Pricing = () => {
   return (
-    <div><h1>Pricing</h1></div>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}><h1>Pricing</h1></motion.div>
   )
 }
 
