@@ -21,13 +21,14 @@ const Home = () => {
     const searchHandler = async (e) => {
         e.preventDefault();
         const jobs = await allJobs?.filter((item) => {
+            console.log("fetched")
             return item.title.toLowerCase().includes(input.toLowerCase())
         })
         setDisplayJob(jobs);
     }
 
     useEffect(() => {
-    //
+    
         setDisplayJob(allJobs); 
     },[allJobs]);
 
@@ -44,6 +45,7 @@ const Home = () => {
                 <datalist id="jobs-list">
                     {allJobs.map((item, index) => (
                         <option key={index} value={item.title} />
+                        
                     ))}
                 </datalist>
 

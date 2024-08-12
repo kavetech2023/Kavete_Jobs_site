@@ -1,19 +1,58 @@
-.job{
-    padding:0 20px;
+.contact{
+    margin:80px auto;
+    max-width:90%;
+    display:flex;
+    align-content: center;
+    justify-content: space-between;
 }
-.job-name{
+.contact-col{
+    flex-basis:48%;
+    color:#676767;
+}
+.contact-col h3{
+    color: #000F38;
+    font-weight:500;
+    font-size:25px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap:20px;
-    margin: 100px auto;
-    margin-bottom: 50px; 
-    
+    margin-bottom: 20px;
 }
-.job-description{
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-    line-height: 1.5;
-    margin-bottom: 10px;
+.contact-col h3 span{
+    width:35px;
+    margin-left:10px;
+}
+.contact-col p{
+    max-width:450px;
+    line-height: 1.3;
+}
+.contact-col ul li{
+    display: flex;
+    align-items: center;
+    margin:20px 0;
+}
+.contact-col ul li span{
+    width:35px;
+    margin-right:10px;
+}
+.contact form input, .contact form textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+
+}
+.contact-col span{
+    display: block;
+    margin: 20px 0;
+}
+/* ----media queries---- */
+@media (max-width: 700px){
+    .contact{
+        display: block;
+    }
+    .contact-col{
+        padding:20px;
+    }
 }

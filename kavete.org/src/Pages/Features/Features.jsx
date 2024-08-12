@@ -4,7 +4,7 @@ import {motion} from "framer-motion";
 
 const Features = () => {
   return (
-    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}><h1>Features</h1></motion.div>
+    <motion.div className='app-box' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}><h1>Features</h1></motion.div>
   )
 }
 
