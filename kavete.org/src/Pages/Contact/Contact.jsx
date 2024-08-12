@@ -36,17 +36,15 @@ const Contact = () => {
 
   return (
     <motion.div  initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+
+       <div className="hero">
+            <h1>Contact Us</h1>
+            <p >Welcome to the Africa's largest Jobs board. Sign up to explore more about jobs.</p>
+        </div>
+
       <div className="app-box">
       <div className='contact'>
-        <div className="contact-col">
-            <h3>Send us a message <span><FaRegMessage /></span> </h3>
-            <p>Feel free to reach out through contact form or find our contact information below. Your feedback, questions, and suggestions are important to us as we strive to provide exceptional service to our university community.</p>
-            <ul>
-                <li><span><IoMailOutline /></span>Contact@Kavete.org</li>
-                <li><span><FaPhoneAlt /></span>+254 0798-566-564</li>
-                <li><span><FaLocationDot /></span>Lavington, Nairobi<br/>Kenya</li>
-            </ul>
-        </div>
+      
         <div className="contact-col">
             <form onSubmit={onSubmit}>
                 <label>Your name</label>
@@ -58,6 +56,17 @@ const Contact = () => {
                 <button type='submit' className='btn dark-btn'>Submit now <span><FaCaretSquareRight /></span></button>
             </form>
             <span>{result}</span>
+        </div>
+
+
+        <div className="contact-col">
+       
+           
+            <ul>
+                <li><span><IoMailOutline /></span>Contact@Kavete.org</li>
+                <li><span><FaPhoneAlt /></span>+254 0798-566-564</li>
+                <li><span><FaLocationDot /></span>Lavington, Nairobi<br/>Kenya</li>
+            </ul>
         </div>
     </div>
     </div>

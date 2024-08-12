@@ -1,11 +1,25 @@
-import React from 'react'
-import './Pricing.css'
-import {motion} from "framer-motion";
+import React from "react";
+import "./Pricing.css";
+import { motion } from "framer-motion";
 
 const Pricing = () => {
   return (
-    <motion.div className='app-box' initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}><h1>Pricing</h1></motion.div>
-  )
-}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <div className="hero">
+        <h1>Pricing</h1>
+        <p>
+          Welcome to the Africa's largest Jobs board. Sign up to explore more
+          about jobs.
+        </p>
+      </div>
 
-export default Pricing
+      <div className="app-box">hellp</div>
+    </motion.div>
+  );
+};
+
+export default Pricing;
