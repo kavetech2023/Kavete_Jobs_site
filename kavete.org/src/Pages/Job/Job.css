@@ -55,8 +55,8 @@
     margin: auto;
 }
 .job-info{
-    max-width: 600px;
-    margin: 80px auto;
+    width:90%;
+    margin: 10px;
     display: flex;
     flex-direction: column;
 }

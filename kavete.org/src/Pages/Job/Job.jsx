@@ -34,7 +34,7 @@ const Job = () => {
     return (
       <motion.div className="job" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
 
-
+<div className="app-box">
         <div className="job-name">
           <img src="https://via.placeholder.com/150" alt="" />
         </div>
@@ -84,6 +84,7 @@ const Job = () => {
           </ul>
 
           <button className="btn">Generate Tailored CV</button>
+        </div>
         </div>
       </motion.div>
     );

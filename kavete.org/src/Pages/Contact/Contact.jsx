@@ -39,7 +39,7 @@ const Contact = () => {
 
        <div className="hero">
             <h1>Contact Us</h1>
-            <p >Welcome to the Africa's largest Jobs board. Sign up to explore more about jobs.</p>
+            
         </div>
 
       <div className="app-box">
