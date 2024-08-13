@@ -83,7 +83,7 @@
     color:#fff;
     display: flex;
     height: 50px;
-    width: 100%;
+    width: auto;
     align-items: center;
 }
 .top .logo .h-menu{

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/kavete.png";
+import logo from "../../assets/kavete_logo.png";
 import { JobContext } from "../../Context/JobContext";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
@@ -55,18 +55,12 @@ const Navbar = () => {
     
       <div className="top">
         <div className="logo">
-          <span className="h-menu">H</span>
-          <span>logo</span>
+          <img src={logo} alt="Logo" />
         </div>
-        <span>Hm</span>
       </div>
 
       <div className="user">
-        <img src="https://randomuser.me/api/portraits" />
-        <div>
-          <p className="bold"></p>
-          <p>Username</p>
-        </div>
+       
         <ul>
             <li>
                 <Link to={"/"}>
