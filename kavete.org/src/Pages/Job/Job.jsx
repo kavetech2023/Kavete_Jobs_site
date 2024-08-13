@@ -41,15 +41,8 @@ const Job = () => {
 
 
 <div className="app-box">
-        <div className="job-name">
-          <img src="https://via.placeholder.com/150" alt="" />
-        </div>
-        <div className="job-description">
-          <h1>{jobData.title}</h1>
-          <h4>{jobData.company}</h4>
-          <h3>Job Description: </h3>
-            <p>{jobData.description}</p>
-            </div>
+        
+    
         
         <div className="job-info">
           <ul>

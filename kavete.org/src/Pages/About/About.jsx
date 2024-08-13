@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import './About.css'
 import {motion} from "framer-motion";
 import { FaRegCirclePlay } from "react-icons/fa6";
+import img from '../../assets/about_img.svg';
 
 
 const About = () => {
@@ -25,13 +26,13 @@ const About = () => {
 
 <div className="hero">
             <h1>About Us</h1>
-            <p >Welcome to the Africa's largest Jobs board. Sign up to explore more about jobs.</p>
+            
         </div>
 
 <div className="app-box">
       <div className='about'>
         <div className="about-holder">
-        <img src="https://via.placeholder.com/450" className="about-img"/>
+        <img src={img} className="about-img"/>
         <span className="play-icon" onClick={()=>{setPlayVideo(true)}}><FaRegCirclePlay size={50}/></span>
         </div>
         <div className="about-right">

@@ -31,7 +31,7 @@ const Navbar = () => {
         </Link>
       </ul>
       <div className="nav-right">
-          <button>Share Job</button>
+          <button>Country</button>
       </div>
     </div>
   );
