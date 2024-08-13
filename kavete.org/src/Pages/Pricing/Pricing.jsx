@@ -1,14 +1,9 @@
 import React from "react";
 import "./Pricing.css";
-import { motion } from "framer-motion";
 
 const Pricing = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <div className="fadein">
       <div className="hero">
         <h1>Pricing</h1>
         <p>
@@ -18,7 +13,7 @@ const Pricing = () => {
       </div>
 
       <div className="app-box">hellp</div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Contact.css'
-import {motion} from "framer-motion";
 import { FaRegMessage } from "react-icons/fa6";
 import { IoMailOutline } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -35,7 +34,7 @@ const Contact = () => {
 
 
   return (
-    <motion.div  initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <div className='fadein'>
 
        <div className="hero">
             <h1>Contact Us</h1>
@@ -70,7 +69,7 @@ const Contact = () => {
         </div>
     </div>
     </div>
-    </motion.div>
+    </div>
   )
 }
 

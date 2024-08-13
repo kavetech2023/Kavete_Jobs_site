@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { jobs } from '../../Data/data'
 import Charts from "../../Components/Charts/Charts";
-import {motion} from "framer-motion";
+
 
 const Job = () => {
   const { jobId } = useParams();
@@ -32,9 +32,9 @@ const Job = () => {
     );
   } else {
     return (
-      <motion.div  initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+      <div>
 
-<div className="hero">
+<div className="hero fadein">
             <h1>{jobData.title}</h1>
             <p >Welcome to the Africa's largest Jobs board. Sign up to explore more about jobs.</p>
         </div>
@@ -85,7 +85,7 @@ const Job = () => {
           <button className="btn">Generate CV & Cover Letter</button>
         </div>
         </div>
-      </motion.div>
+      </div>
     );
   }
 };

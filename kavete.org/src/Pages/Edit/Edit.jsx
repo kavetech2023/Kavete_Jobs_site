@@ -1,7 +1,7 @@
 import React, {useState, useCallback} from 'react'
 import {useDropzone} from 'react-dropzone'
 import './Edit.css'
-import {motion} from "framer-motion";
+
 
 
 const Edit = () => {
@@ -18,7 +18,7 @@ const files = acceptedFiles.map((file) => (
   </li>
 ));
   return (
-    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <div className='fadein'>
       <div className="hero">
         <h1>Ai Edit CV</h1>
         <p>
@@ -48,7 +48,7 @@ const files = acceptedFiles.map((file) => (
     </div>
       </div>
 
-    </motion.div>
+    </div>
   )
 }
 
