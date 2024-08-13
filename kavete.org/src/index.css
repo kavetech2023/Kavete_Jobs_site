@@ -36,3 +36,14 @@ a{
   text-align: center;
   gap: 30px;
 }
+.fadein{
+  animation: fadeIn 1.5s;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
