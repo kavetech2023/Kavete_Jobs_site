@@ -48,7 +48,7 @@ const Navbar = () => {
       </div>
     </div>
 
-    <div className={`sidebar ${sidebar?"":"sidebar-show"}`}>
+    <div className={`sidebar ${sidebar?"sidebar-show":""}`}>
     
       <div className="top">
         <div className="logo">
