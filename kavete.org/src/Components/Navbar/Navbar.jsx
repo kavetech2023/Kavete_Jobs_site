@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
+import logo from "../../assets/kavete.png";
 import { JobContext } from "../../Context/JobContext";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
@@ -12,9 +13,11 @@ import { TiContacts } from "react-icons/ti";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
+  const [text, setText] = useState("Menu");
 
   const toggleSidebar = () => {
-    sidebar ? setSidebar(false) : setSidebar(true);
+    sidebar ? setSidebar(false)  : setSidebar(true);
+    sidebar ? setText("Menu") : setText("Close Menu");
   }
 
 
@@ -22,7 +25,7 @@ const Navbar = () => {
     <>
     <div className="navbar">
       <Link to={"/"}>
-        <img src="" alt="Logo" className="logo" />
+        <img src={logo} alt="Logo" className="logo" />
       </Link>
 
       <ul>
@@ -44,11 +47,11 @@ const Navbar = () => {
       </ul>
       <div className="nav-right">
           <button className="country-button">Country</button>
-          <button className="menu-button" onClick={toggleSidebar}>Menu</button>
+          <button className="menu-button" onClick={toggleSidebar}>{text}</button>
       </div>
     </div>
 
-    <div className={`sidebar ${sidebar?"sidebar-show":""}`}>
+    <div className={`sidebar ${sidebar?"sidebar-show":" "}`}>
     
       <div className="top">
         <div className="logo">
