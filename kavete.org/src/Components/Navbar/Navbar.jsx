@@ -63,7 +63,7 @@ const Navbar = () => {
        
         <ul>
             <li>
-                <Link to={"/"}>
+                <Link to={"/"} onClick={toggleSidebar}>
                 <span><FaHome /></span>
                 <span>Home</span>
             </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
             </li>
 
             <li>
-                <Link to={"/editcv"}>
+                <Link to={"/editcv"} onClick={toggleSidebar}>
                 <span><MdModeEdit /></span>
                 <span>Edit Cv</span>
             </Link>
@@ -79,20 +79,20 @@ const Navbar = () => {
             </li> 
             
             <li>
-            <Link to={"/pricing"}>
+            <Link to={"/pricing"} onClick={toggleSidebar}>
             <span><IoIosPricetags /></span>
             <span>Pricing</span>
             </Link>
             <span className="tooltip"></span>
             </li> 
             
-            <li><Link to={"/about"}>
+            <li><Link to={"/about"} onClick={toggleSidebar}>
             <span><SiAboutdotme /></span>
                 <span>About</span>
             </Link>
             <span className="tooltip"></span>
             </li> 
-            <li><Link to={"/contact"}>
+            <li><Link to={"/contact"} onClick={toggleSidebar}>
             <span><TiContacts /></span>
                 <span>Contact us</span>
             </Link>

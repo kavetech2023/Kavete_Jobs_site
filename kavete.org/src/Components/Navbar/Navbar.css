@@ -63,10 +63,12 @@
 /* Add styles for the sidebar here */
 .sidebar{
     position: fixed;
+    opacity: 1;
+    z-index: 999;
     top:0;
-    left: -150px;
+    left: -200px;
     height: 100vh;
-    width:150px;
+    width:200px;
     background-color: #0066b2;
     display: flex;
     justify-content: flex-start;
