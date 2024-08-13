@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import './About.css'
-import {motion} from "framer-motion";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import img from '../../assets/about_img.svg';
 
@@ -22,7 +21,7 @@ const About = () => {
 
 
     
-    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <div className='fadein'>
 
 <div className="hero">
             <h1>About Us</h1>
@@ -47,7 +46,7 @@ const About = () => {
     <div className={`video-player ${playVideo?"":"hide"}`} ref={player} onClick={closePlayer}>
     <iframe width="90%"  height="90%" className="video" src="https://www.youtube.com/embed/mqr_wZxmQK8?si=33qA-5v6fxZg7AaT" title="YouTube video player" ></iframe>
 </div>
-    </motion.div>
+    </div>
   )
 }
 
