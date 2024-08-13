@@ -46,9 +46,7 @@ gap: 10px;
 }
 /* ----media queries---- */
 @media (max-width: 700px){
-    .contact{
-        
-    }
+   
     .contact-col{
         padding:20px;
     }

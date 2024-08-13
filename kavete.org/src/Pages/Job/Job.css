@@ -69,6 +69,11 @@
 }
 .job-info ul li{
     font-weight:300;
+    text-align: left;
+}
+.job-info ul li:first-child{
+    min-width: 150px;
+    text-align: left;
 }
 .btn{
     border: none;

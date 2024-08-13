@@ -22,7 +22,7 @@ const Home = () => {
         e.preventDefault();
         const jobs = await allJobs?.filter((item) => {
             console.log("fetched")
-            return item.title.toLowerCase().includes(input.toLowerCase())
+            return item.description.toLowerCase().includes(input.toLowerCase())
         })
         setDisplayJob(jobs);
     }

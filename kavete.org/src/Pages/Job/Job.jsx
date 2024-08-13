@@ -66,11 +66,11 @@ const Job = () => {
           </ul>
           <ul>
             <li><b>Qualifications:</b></li>
-            <li>{jobData.qualifications}</li>
+            <li>{jobData.minimum_qualifications}</li>
           </ul>
           <ul>
-            <li><b>Key Skills:</b></li>
-            <li>{jobData.key_skills}</li>
+            <li><b>Preferred Qualifications:</b></li>
+            <li>{jobData.preferred_qualifications}</li>
           </ul>
           <ul>
             <li><b>Responsibilities:</b></li>
@@ -89,7 +89,7 @@ const Job = () => {
             <li><a href={`${jobData.link}`}>Go to Page</a></li>
           </ul>
 
-          <button className="btn">Generate Tailored CV</button>
+          <button className="btn">Generate CV & Cover Letter</button>
         </div>
         </div>
       </motion.div>

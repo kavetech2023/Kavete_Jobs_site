@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "./Navbar.css";
 import { JobContext } from "../../Context/JobContext";
 import { Link } from "react-router-dom";
-import axios from 'axios';
 
 
 
@@ -18,8 +17,8 @@ const Navbar = () => {
         <Link to={"/"}>
           <li>Home</li>
         </Link>
-        <Link to={"/features"}>
-          <li>Features</li>
+        <Link to={"/editcv"}>
+          <li>Edit Cv - AI</li>
         </Link>
         <Link to={"/pricing"}>
           <li>Pricing</li>

@@ -12,7 +12,11 @@
     border-radius: 10px;
     display: block;
 }
-.play-icon{
+.about-holder{
+    position: relative;
+    flex-basis: 100%;
+}
+.about-holder .play-icon{
     width:60px;
     position: absolute;
     top:50%;
