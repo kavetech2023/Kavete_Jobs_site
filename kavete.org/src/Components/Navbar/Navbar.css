@@ -39,6 +39,9 @@
     background: #002834;
     color: white;
 }
+.navbar .menu-button{
+    display: none;
+}
 .navbar button{
     display: flex;
     align-items: center;
@@ -55,6 +58,64 @@
 .navbar button span{
     width: 13px;
 }
+
+
+/* Add styles for the sidebar here */
+.sidebar{
+    position: fixed;
+    top:0;
+    left: -150px;
+    height: 100vh;
+    width:150px;
+    background-color: #0066b2;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.5s ease;
+}
+.sidebar-show{
+    left:0;
+}
+.sidebar .top .logo{
+    color:#fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
+.top .logo .h-menu{
+    font-size: 2rem;
+    margin-right: 5px;
+}
+.top{
+    margin-top: 25px;
+}
+.sidebar ul li{
+    position: relative;
+    padding: 0.5rem 0;
+    list-style: none;
+    height: 50px;
+    width:90%;
+    line-height: 50px;
+    border-bottom: 1px solid #aaa;
+}
+.sidebar ul li a{
+    color:white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+.sidebar ul li a span{
+    margin-left: 10px;
+}
+.user-img{
+    width:50px;
+    border-radius: 100%;
+    border: 1px solid #eee;
+}
+
 @media (max-width:900px){
     .navbar{
         padding: 20px 8%;
@@ -72,7 +133,14 @@
     .navbar ul{
         display: none;
     }
-    navbar button img{
+    .navbar button img{
         width: 20px;
     }
+    .navbar .country-button{
+        display:none;
+    }
+    .navbar .menu-button{
+        display: block;
+    }
+    
 }

@@ -4,8 +4,9 @@ import Footer from "./Components/Footer/Footer";
 import AnimatedRoutes from "./AnimatedRoutes";
 
 
-const App = () => {
 
+const App = () => {
+ 
   
   return (
     <div className="app">
