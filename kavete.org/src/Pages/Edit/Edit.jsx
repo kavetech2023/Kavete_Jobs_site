@@ -1,55 +1,44 @@
-import React, {useState, useCallback} from 'react'
-import {useDropzone} from 'react-dropzone'
-import './Edit.css'
-
-
+import React from "react";
+import "./Edit.css";
+import { Page, Text, View, Document, StyleSheet, PDFViewer } from "@react-pdf/renderer";
 
 const Edit = () => {
-
-  const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
-  useDropzone({});
-
-  
-  
-
-const files = acceptedFiles.map((file) => (
-  <li key={file.path}>
-    {file.path} - {file.size} bytes
-  </li>
-));
+  const styles = StyleSheet.create({
+    page1: {
+      backgroundColor: "yellow",
+    },
+    
+  });
   return (
-    <div className='fadein'>
-      <div className="hero">
-        <h1>Ai Edit CV</h1>
-        <p>
-          Welcome to the Africa's largest Jobs board. Sign up to explore more
-          about jobs.
-        </p>
-      </div>
+    <div className="fadein">
 
+
+<div className="hero">
+            <h1>Your CV</h1>
+            
+        </div>
       <div className="app-box">
-      <div {...getRootProps({ className: "dropzone" })}>
-      <input className="input-zone" {...getInputProps()} />
-      <div className="text-center">
-        {isDragActive ? (
-          <p className="dropzone-content">
-            Release to drop the files here
-          </p>
-        ) : (
-          <p className="dropzone-content">
-            Drag’n’drop some files here, or click to select files
-          </p>
-        )}
-        
-      </div>
-      <aside>
-        <ul>{files}</ul>
-      </aside>
-    </div>
-      </div>
+        <Document>
+          <Page size="A4" style={styles.page1}>
+            <View>
+              <Text>Content for CV goes here..</Text>
+            </View>
+            </Page>
+            <Page size="A4" style={styles.page1}>
+            <View>
+              <Text>Section #2</Text>
+            </View>
+          </Page>
+        </Document>
 
-    </div>
-  )
-}
 
-export default Edit
+        <PDFViewer style={{ width: "100%", height: "500px" }}>
+          <Document />
+        </PDFViewer>
+      </div>
+    </div>
+  );
+  
+};
+
+export default Edit;

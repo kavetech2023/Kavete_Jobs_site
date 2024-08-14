@@ -79,7 +79,7 @@ const Home = () => {
       </div>
 
       <div className="job-table">
-        <div className="table-layout">
+        <div className="table-layout no-hover">
           <p>#</p>
           <p>Job Title</p>
           <p>Location</p>

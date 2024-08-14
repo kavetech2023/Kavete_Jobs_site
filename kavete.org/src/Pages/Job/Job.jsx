@@ -3,7 +3,7 @@ import "./Job.css";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { jobs } from "../../Data/data";
-import Charts from "../../Components/Charts/Charts";
+
 
 const Job = () => {
   const { jobId } = useParams();

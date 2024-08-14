@@ -4,11 +4,10 @@ import "./Pricing.css";
 const Pricing = () => {
   return (
     <div className="fadein">
-      <div className="hero">
+      <div className="hero gap ">
         <h1>Pricing</h1>
         <p>
-          Welcome to the Africa's largest Jobs board. Sign up to explore more
-          about jobs.
+          Look at the most popular price categories of your liking. May they be helpful to you..
         </p>
       </div>
 

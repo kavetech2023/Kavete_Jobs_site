@@ -37,7 +37,7 @@ const About = () => {
         <div className="about-right">
             <h2>Nurturing Tomorrow's leaders today!</h2>
             <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            <p>This is just some fake content to get started.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
         </div>
