@@ -27,7 +27,7 @@ const Home = () => {
     e.preventDefault();
     const jobs = await allJobs?.filter((item) => {
       console.log("fetched");
-      return item.description.toLowerCase().includes(input.toLowerCase());
+      return item.title.toLowerCase().includes(input.toLowerCase());
     });
     setDisplayJob(jobs);
   };
@@ -88,7 +88,7 @@ const Home = () => {
         </div>
         {currentJobs.slice(0, 10).map((job, index) => (
           <Link to={`/job/${job.id}`} className="table-layout" key={index}>
-            <p>{index + 1}</p>
+            <p>{job.id }</p>
             <div>
               <span><FaRegCheckCircle style={{color:"green"}} /></span>
               <p>{job.title}</p>
@@ -99,10 +99,10 @@ const Home = () => {
             <p className="job-peak">{job.salary}</p>
           </Link>
         ))}
-        <div className="table-layout">
+        <div className="pagination-table">
           {pageNumbers.map((number) => ( 
-          <p key={number} onClick={() => setCurrentPage(number)}>
-            {number}
+          <p className="paginate" key={number} onClick={() => setCurrentPage(number)}>
+            <span>{number}</span>
           </p>
           ))
 }
