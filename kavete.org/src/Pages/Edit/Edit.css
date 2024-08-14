@@ -1,46 +1,68 @@
 .cv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    width: 100%;
-    max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding:20px;
+  font-size: 12px;
 }
-.cv h1{
-    margin-bottom: 10px;
+.personal-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0;
 }
-.cv h2{
-    margin-bottom: 10px;
+.username{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-.cv h3{
-    margin-bottom: 10px;
+.contacts{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  gap:20px;
 }
-.cv p{
-    margin-bottom: 10px;
+.work-experience{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin: 5px 0;
 }
-.cv a{
-    margin-bottom: 10px;
+.work-experience h2{
+  margin: 10px auto;
 }
-.cv img{
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 10px;
+hr{
+  width: 100%;
+  border: 1px solid #ddd;
 }
-.cv ul{
-    margin-bottom: 10px;
+.work-details{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 5px 0;
 }
-.cv ul li{
-    margin-bottom: 5px;
+.left-right{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
 }
-.cv span{
-    margin-bottom: 10px;
-}
-.cv button{
-    margin-bottom: 10px;
+.work-list{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
