@@ -1,7 +1,46 @@
-.dropzone {
-    text-align: center;
-    padding: 20px;
-    border: 3px blue dashed;
+.cv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #f0f0f0;
     width: 100%;
-    margin: auto;
-  }
+    max-width: 800px;
+}
+.cv h1{
+    margin-bottom: 10px;
+}
+.cv h2{
+    margin-bottom: 10px;
+}
+.cv h3{
+    margin-bottom: 10px;
+}
+.cv p{
+    margin-bottom: 10px;
+}
+.cv a{
+    margin-bottom: 10px;
+}
+.cv img{
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 10px;
+}
+.cv ul{
+    margin-bottom: 10px;
+}
+.cv ul li{
+    margin-bottom: 5px;
+}
+.cv span{
+    margin-bottom: 10px;
+}
+.cv button{
+    margin-bottom: 10px;
+}
