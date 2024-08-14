@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import * as countries from "i18n-iso-countries";
+import { FaRegCheckCircle } from "react-icons/fa";
 import "./Home.css";
 import { JobContext } from "../../Context/JobContext";
 import { Link } from "react-router-dom";
@@ -9,6 +10,9 @@ const Home = () => {
 
   const { allJobs } = useContext(JobContext);
   const [displayJob, setDisplayJob] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [jobsPerPage, setJobsPerPage] = useState(5);
   const [input, setInput] = useState("");
 
   const inputHandler = (e) => {
@@ -31,6 +35,19 @@ const Home = () => {
   useEffect(() => {
     setDisplayJob(allJobs);
   }, [allJobs]);
+
+  // Get current jobs
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = displayJob.slice(indexOfFirstJob, indexOfLastJob);
+
+  // Change page
+
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(displayJob.length / jobsPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <div className="fadein">
@@ -69,11 +86,11 @@ const Home = () => {
           <p className="ta">Company</p>
           <p className="job-peak">Salary Range</p>
         </div>
-        {displayJob.slice(0, 10).map((job, index) => (
+        {currentJobs.slice(0, 10).map((job, index) => (
           <Link to={`/job/${job.id}`} className="table-layout" key={index}>
             <p>{index + 1}</p>
             <div>
-              <img src="https://via.placeholder.com/150" alt="" />
+              <span><FaRegCheckCircle style={{color:"green"}} /></span>
               <p>{job.title}</p>
             </div>
 
@@ -82,6 +99,14 @@ const Home = () => {
             <p className="job-peak">{job.salary}</p>
           </Link>
         ))}
+        <div className="table-layout">
+          {pageNumbers.map((number) => ( 
+          <p key={number} onClick={() => setCurrentPage(number)}>
+            {number}
+          </p>
+          ))
+}
+        </div>
       </div>
     </div>
   );

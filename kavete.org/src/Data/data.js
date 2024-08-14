@@ -75,8 +75,20 @@ export const jobs = [
         salary: "30 - 50K KES",
         description: "",
         responsibilities: ["Coordinate with the Finance and Admin Manager in preparation of budgets for the unit and ensure compliance to the approved budget.","Ensure timely renewal of existing policies of the Insurance Agency","Provide a progress report on the unit’s performance for decision making purposes"],
+        minimum_qualifications: " Currently enrolled in a Bachelor's or Master's degree program, and in your penultimate year of study.",
         preferred_qualifications:[" Degree in Commerce or a Business related course","Diploma in Insurance or any insurance certification will be an added advantage","3 years experience in insurance .","Proficiency in ICT with Ms office as specifically the insurance birthmark system"],
-    }
+    },{
+        id: 7,
+        title: "Campus Security Manager",
+        location: "Kenya",
+        company: "Google",
+        salary: "30 - 50K KES",
+        description: "",
+        responsibilities: ["Lead and coordinate physical security, safety, and resilience efforts at Google and external property owner offices in Google Kenya."," Manage risk, threat, and mitigation promptly to ensure that our people and spaces are safe."],
+        minimum_qualifications: ["Bachelor's degree or equivalent practical experience","Experience working on international programs.","Experience managing security operations"],
+        
+        preferred_qualifications:[" Ability to handle highly confidential and sensitive information, with high ethical standards and excellent judgment, discretion, and diplomacy."," Ability to manage multiple campus sites in multiple countries in a fast-paced office environment.","Excellent communication and problem-solving skills, with agility and close attention to detail."],
+    },
 ];
 
 export default jobs;
