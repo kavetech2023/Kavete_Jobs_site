@@ -2,23 +2,22 @@ import React, { useEffect } from "react";
 import "./Job.css";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { jobs } from '../../Data/data'
+import { jobs } from "../../Data/data";
 import Charts from "../../Components/Charts/Charts";
-
 
 const Job = () => {
   const { jobId } = useParams();
   const [jobData, setJobData] = useState({});
 
   const fetchJobData = async () => {
-    const job = jobs.find(item => item.id == jobId);
+    const job = jobs.find((item) => item.id == jobId);
     if (job) {
-      console.log('Job fetched:', job);
+      console.log("Job fetched:", job);
       setJobData(job);
     } else {
-      console.log('Job not found');
+      console.log("Job not found");
     }
-  }
+  };
 
   useEffect(() => {
     fetchJobData();
@@ -32,58 +31,76 @@ const Job = () => {
     );
   } else {
     return (
-      <div>
-
-<div className="hero fadein">
-            <h1>{jobData.title}</h1>
-            <p >Welcome to the Africa's largest Jobs board. Sign up to explore more about jobs.</p>
+      <div className="fadein">
+        <div className="hero">
+          <h1>{jobData.title}</h1>
+          <p>
+            Welcome to the Africa's largest Jobs board. Sign up to explore more
+            about jobs.
+          </p>
         </div>
 
+        <div className="app-box">
+          <div className="job-info">
+            <ul>
+              <li>
+                <b>Job title</b>
+              </li>
+              <li>{jobData.title}</li>
+            </ul>
+            <ul>
+              <li>
+                <b>Company</b>
+              </li>
+              <li>{jobData.company}</li>
+            </ul>
+            <ul>
+              <li>
+                <b>Location</b>
+              </li>
+              <li>{jobData.location}</li>
+            </ul>
+            <ul>
+              <li>
+                <b>Qualifications:</b>
+              </li>
+              <li>{jobData.minimum_qualifications}</li>
+            </ul>
+            <ul>
+              <li>
+                <b>Preferred Qualifications:</b>
+              </li>
+              <li>{jobData.preferred_qualifications}</li>
+            </ul>
+            <ul>
+              <li>
+                <b>Responsibilities:</b>
+              </li>
+              <li>{jobData.responsibilities}</li>
+            </ul>
+            <ul>
+              <li>
+                <b>Benefits:</b>
+              </li>
+              <li>{jobData.benefits}</li>
+            </ul>
+            <ul>
+              <li>
+                <b>Perks:</b>
+              </li>
+              <li>{jobData.perks}</li>
+            </ul>
+            <ul>
+              <li>
+                <b>Link:</b>
+              </li>
+              <li>
+                <a href={`${jobData.link}`}>Go to Page</a>
+              </li>
+            </ul>
 
-<div className="app-box">
-        
-    
-        
-        <div className="job-info">
-          <ul>
-            <li><b>Job title</b></li>
-            <li>{jobData.title}</li>
-          </ul>
-          <ul>
-            <li><b>Company</b></li>
-            <li>{jobData.company}</li>
-          </ul>
-          <ul>
-            <li><b>Location</b></li>
-            <li>{jobData.location}</li>
-          </ul>
-          <ul>
-            <li><b>Qualifications:</b></li>
-            <li>{jobData.minimum_qualifications}</li>
-          </ul>
-          <ul>
-            <li><b>Preferred Qualifications:</b></li>
-            <li>{jobData.preferred_qualifications}</li>
-          </ul>
-          <ul>
-            <li><b>Responsibilities:</b></li>
-            <li>{jobData.responsibilities}</li>
-          </ul>
-          <ul>
-            <li><b>Benefits:</b></li>
-            <li>{jobData.benefits}</li>
-          </ul>
-          <ul>
-            <li><b>Perks:</b></li>
-            <li>{jobData.perks}</li>
-          </ul>
-          <ul>
-            <li><b>Link:</b></li>
-            <li><a href={`${jobData.link}`}>Go to Page</a></li>
-          </ul>
-
-          <button className="btn">Generate CV & Cover Letter</button>
-        </div>
+            <button className="btn">Generate CV & Cover Letter</button>
+          </div>
         </div>
       </div>
     );
