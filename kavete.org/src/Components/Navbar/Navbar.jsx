@@ -8,6 +8,7 @@ import { MdModeEdit } from "react-icons/md";
 import { IoIosPricetags } from "react-icons/io";
 import { SiAboutdotme } from "react-icons/si";
 import { TiContacts } from "react-icons/ti";
+import { GoogleLogin } from '@react-oauth/google';
 
 
 
@@ -48,6 +49,14 @@ const Navbar = () => {
       <div className="nav-right">
           <button className="country-button">Country</button>
           <button className="menu-button" onClick={toggleSidebar}>{text}</button>
+          <GoogleLogin
+  onSuccess={credentialResponse => {
+    console.log(credentialResponse);
+  }}
+  onError={() => {
+    console.log('Login Failed');
+  }}
+/>
       </div>
     </div>
 

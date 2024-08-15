@@ -7,13 +7,15 @@ import {BrowserRouter} from 'react-router-dom'
 import JobContextProvider from './Context/JobContext.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <GoogleOAuthProvider clientId='643795674692-nlan5drobvlkelkkolebeeviooj6ea7f.apps.googleusercontent.com'>
+  
   <StrictMode>
+    <GoogleOAuthProvider clientId='643795674692-nlan5drobvlkelkkolebeeviooj6ea7f.apps.googleusercontent.com'>
     <BrowserRouter>
       <JobContextProvider>
         <App />
       </JobContextProvider>
     </BrowserRouter> 
+    </GoogleOAuthProvider>
   </StrictMode>
-  </GoogleOAuthProvider>
+ 
 )
