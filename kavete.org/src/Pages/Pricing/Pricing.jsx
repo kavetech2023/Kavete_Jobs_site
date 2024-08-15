@@ -98,7 +98,6 @@ const Pricing = () => {
 
           <p>Genevieve Lavorre</p>
         </div>
-        <button onClick={handlePrintRTP}>Print with React to Print</button>
       </div>
     </div>
   );
