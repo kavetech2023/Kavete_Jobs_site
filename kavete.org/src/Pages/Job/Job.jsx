@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import "./Job.css";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
 import { jobs } from "../../Data/data";
 import { FaHeart } from "react-icons/fa";
 
