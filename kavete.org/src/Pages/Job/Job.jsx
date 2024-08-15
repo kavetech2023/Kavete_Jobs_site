@@ -8,6 +8,11 @@ import { FaHeart } from "react-icons/fa";
 const Job = () => {
   const { jobId } = useParams();
   const [jobData, setJobData] = useState({});
+  const [savedJobs, setSavedJobs] = useState("Save Job");
+  const saveJob = () => {
+
+    setSavedJobs("Job Saved");
+  };
 
   const fetchJobData = async () => {
     const job = jobs.find((item) => item.id == jobId);
@@ -38,6 +43,7 @@ const Job = () => {
             Welcome to the Africa's largest Jobs board. Sign up to explore more
             about jobs.
           </p>
+          <button onClick={saveJob} className="btn">{savedJobs}  <FaHeart color={"red"} /> </button>
         </div>
 
         <div className="app-box">
@@ -99,7 +105,7 @@ const Job = () => {
               </li>
             </ul>
 
-            <button className="btn">Generate CV & Cover Letter <FaHeart /></button>
+            
           </div>
         </div>
       </div>

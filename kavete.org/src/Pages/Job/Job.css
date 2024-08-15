@@ -78,6 +78,7 @@
 .btn{
     border: none;
     background: #7927ff;
+    border: 1px solid white;
     color:white;
     font-size:16px;
     padding:10px 30px;

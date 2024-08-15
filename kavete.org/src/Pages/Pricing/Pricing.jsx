@@ -3,12 +3,28 @@ import "./Pricing.css";
 import { useReactToPrint } from "react-to-print";
 import { FiPrinter } from "react-icons/fi";
 import { GiTechnoHeart } from "react-icons/gi";
+import run from "../../config/gemini.js";
 
 const Pricing = () => {
+
+  
   const componentRef = useRef();
   const handlePrintRTP = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  const handleMoreInfo = async (channelTitle) => {
+    setModal(true);
+    try {
+      // Process the data with the Gemini API using the 
+      const processedData = await run("Explain to me " + channelTitle + "on youtube very briefly");
+      setMoreInfoData(processedData);
+      
+    } catch (error) {
+      console.error("Error processing data:", error);
+      // Handle errors gracefully (e.g., display an error message)
+    }
+  };
   return (
     <div className="fadein">
       <div className="hero gap ">
@@ -18,7 +34,7 @@ const Pricing = () => {
           helpful to you..
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
-        <button onClick={handlePrintRTP}><span><GiTechnoHeart /></span> Update with Ai</button>
+        <button onClick={() => handleMoreInfo()}><span><GiTechnoHeart /></span> Update with Ai</button>
         <button onClick={handlePrintRTP}><span><FiPrinter /></span> Print</button>
         </div>
       </div>

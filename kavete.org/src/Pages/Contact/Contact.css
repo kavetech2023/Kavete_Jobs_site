@@ -18,6 +18,7 @@
 .contact-col ul{
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     margin:20px 0;
 }
@@ -38,6 +39,21 @@ gap: 10px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     border-radius: 5px;
     resize: none;
+}
+.contact .button{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    border: none;
+    background: #7927ff;
+    color:white;
+    font-size:16px;
+    padding:10px;
+    border-radius: 5px;
+    height: 35px;
+    cursor:pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .contact-col span{
