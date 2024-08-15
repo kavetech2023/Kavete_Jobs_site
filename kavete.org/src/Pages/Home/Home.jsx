@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import * as countries from "i18n-iso-countries";
 import { FaRegCheckCircle } from "react-icons/fa";
 import "./Home.css";
 import { JobContext } from "../../Context/JobContext";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const allCountries = countries.getNames("en", { select: "official" });
 
   const { allJobs } = useContext(JobContext);
   const [displayJob, setDisplayJob] = useState([]);

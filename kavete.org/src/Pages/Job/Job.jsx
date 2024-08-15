@@ -3,6 +3,7 @@ import "./Job.css";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { jobs } from "../../Data/data";
+import { FaHeart } from "react-icons/fa";
 
 
 const Job = () => {
@@ -99,7 +100,7 @@ const Job = () => {
               </li>
             </ul>
 
-            <button className="btn">Generate CV & Cover Letter</button>
+            <button className="btn">Generate CV & Cover Letter <FaHeart /></button>
           </div>
         </div>
       </div>
