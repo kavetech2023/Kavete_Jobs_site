@@ -1,4 +1,4 @@
-export const GEMINI_API_KEY="AIzaSyC4kzSsHf2ZittKT3f7lX9wPGkz6RMas3M"
+
 /*
  * Install the Generative AI SDK
  *
