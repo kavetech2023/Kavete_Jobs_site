@@ -33,10 +33,10 @@ const Navbar = () => {
           <li>Home</li>
         </Link>
         <Link to={"/editcv"}>
-          <li>Edit Cv - AI</li>
+          <li>My CV</li>
         </Link>
         <Link to={"/pricing"}>
-          <li>Pricing</li>
+          <li>My Cover Letter</li>
         </Link>
         <Link to={"/about"}>
           <li>About</li>
@@ -73,7 +73,7 @@ const Navbar = () => {
             <li>
                 <Link to={"/editcv"} onClick={toggleSidebar}>
                 <span><MdModeEdit /></span>
-                <span>Edit Cv</span>
+                <span>My Cv</span>
             </Link>
             <span className="tooltip"></span>
             </li> 
@@ -81,7 +81,7 @@ const Navbar = () => {
             <li>
             <Link to={"/pricing"} onClick={toggleSidebar}>
             <span><IoIosPricetags /></span>
-            <span>Pricing</span>
+            <span>My cover letter</span>
             </Link>
             <span className="tooltip"></span>
             </li> 
