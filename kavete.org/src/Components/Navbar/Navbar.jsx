@@ -8,13 +8,18 @@ import { MdModeEdit } from "react-icons/md";
 import { IoIosPricetags } from "react-icons/io";
 import { SiAboutdotme } from "react-icons/si";
 import { TiContacts } from "react-icons/ti";
-import { GoogleLogin } from '@react-oauth/google';
+import { MdOutlineArrowDropDown } from "react-icons/md";
 
 
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [text, setText] = useState("Menu");
+  const [login, setLogin ] = useState(false);
+
+  const toggleLogin = () => {
+        login? setLogin(false) : setLogin(true);
+  }
 
   const toggleSidebar = () => {
     sidebar ? setSidebar(false)  : setSidebar(true);
@@ -47,16 +52,19 @@ const Navbar = () => {
         </Link>
       </ul>
       <div className="nav-right">
+            <div onClick={toggleLogin} className="user-profile">
+              <div className="dropdown">
+              <img src="https://via.placeholder.com/150" alt="" />
+              <MdOutlineArrowDropDown />
+              <div className={`google-login ${login? "": "display-item"}`}>
+                login goes here
+              </div>
+              </div>
+                
+            </div>
           <button className="country-button">Country</button>
           <button className="menu-button" onClick={toggleSidebar}>{text}</button>
-          <GoogleLogin
-  onSuccess={credentialResponse => {
-    console.log(credentialResponse);
-  }}
-  onError={() => {
-    console.log('Login Failed');
-  }}
-/>
+          
       </div>
     </div>
 
