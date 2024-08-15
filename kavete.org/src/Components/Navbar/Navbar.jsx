@@ -8,7 +8,6 @@ import { MdModeEdit } from "react-icons/md";
 import { IoIosPricetags } from "react-icons/io";
 import { SiAboutdotme } from "react-icons/si";
 import { TiContacts } from "react-icons/ti";
-import { MdOutlineArrowDropDown } from "react-icons/md";
 
 
 
@@ -55,7 +54,6 @@ const Navbar = () => {
             <div onClick={toggleLogin} className="user-profile">
               <div className="dropdown">
               <img src="https://via.placeholder.com/150" alt="" />
-              <MdOutlineArrowDropDown />
               <div className={`google-button ${login? "": "display-item"}`}>
                 login goes here
               </div>
