@@ -84,6 +84,17 @@
   z-index: 1;
   right:0;
 }
+.navbar .notification{
+    position: absolute;
+    background-color: red;
+    font-size: 11px;
+    color: white;
+    padding: 2px 7px;
+    width:auto;
+    border-radius: 100%;
+    right:0;
+    bottom: -2px;
+}
 .display-item{
     display: none;
 }

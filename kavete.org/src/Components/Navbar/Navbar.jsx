@@ -53,6 +53,7 @@ const Navbar = () => {
       <div className="nav-right">
             <div onClick={toggleLogin} className="user-profile">
               <div className="dropdown">
+                <div className="notification">1</div>
               <img src="https://via.placeholder.com/150" alt="" />
               <div className={`google-button ${login? "": "display-item"}`}>
                 login goes here
