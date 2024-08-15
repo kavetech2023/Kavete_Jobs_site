@@ -17,17 +17,17 @@ a{
 }
 .app-box{
   max-width: 600px;
-  margin: 40px auto;
+  margin: 10px auto;
   display: flex;
   background: white;
   flex-direction: column;
   gap: 30px;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .hero{
   max-width: 600px;
-  margin: 120px auto 90px auto;
+  margin: 120px auto 50px auto;
   display: flex;
   flex-direction: column;
   align-items: center;

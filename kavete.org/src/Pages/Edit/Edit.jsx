@@ -1,5 +1,7 @@
 import React, {useState,useRef} from "react";
 import { useReactToPrint } from "react-to-print";
+import { FiPrinter } from "react-icons/fi";
+import { GiTechnoHeart } from "react-icons/gi";
 
 import "./Edit.css";
 
@@ -16,6 +18,15 @@ const Edit = () => {
     <div className="fadein">
       <div className="hero">
         <h1>Your CV</h1>
+        <p>
+          Look at the most popular price categories of your liking. May they be
+          helpful to you..
+        </p>
+        <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
+        <button onClick={handlePrintRTP}><span><GiTechnoHeart /></span> Update with Ai</button>
+        <button onClick={handlePrintRTP}><span><FiPrinter /></span> Print</button>
+        </div>
+        
       </div>
       <div className="app-box">
 
@@ -27,10 +38,10 @@ const Edit = () => {
             </div>
             
             <div className="contacts">
-              <p>Nairobi</p>
-              <p>LinkedIn</p>
-              <p>Phone: +254798566564</p>
-              <p>Email:</p>
+              <div>Nairobi</div>
+              <div>LinkedIn</div>
+              <div>Phone: +254798566564</div>
+              <div>Email:</div>
             </div>
             </div>
 
@@ -207,7 +218,7 @@ const Edit = () => {
 
         
 
-        <button onClick={handlePrintRTP}>Print with React to Print</button>
+        
         </div>
 
 

@@ -1,6 +1,8 @@
 import Reac, { useRef } from "react";
 import "./Pricing.css";
 import { useReactToPrint } from "react-to-print";
+import { FiPrinter } from "react-icons/fi";
+import { GiTechnoHeart } from "react-icons/gi";
 
 const Pricing = () => {
   const componentRef = useRef();
@@ -15,6 +17,10 @@ const Pricing = () => {
           Look at the most popular price categories of your liking. May they be
           helpful to you..
         </p>
+        <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
+        <button onClick={handlePrintRTP}><span><GiTechnoHeart /></span> Update with Ai</button>
+        <button onClick={handlePrintRTP}><span><FiPrinter /></span> Print</button>
+        </div>
       </div>
 
       <div className="app-box">

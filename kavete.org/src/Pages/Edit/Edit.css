@@ -1,16 +1,13 @@
 .cv{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   width: 100%;
   padding:20px;
   font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .personal-info{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   width: 100%;
   margin: 20px 0;
@@ -18,21 +15,29 @@
 .username{
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
+}
+.username h1{
+  margin: 0;
+  font-size:40px;
 }
 .contacts{
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  font-size: 12px;
+  margin-top: 10px;
   align-items: center;
   flex-direction: row;
   width: 100%;
-  gap:20px;
+  gap:10px;
+}
+.contacts div{
+  border:1px solid #ddd;
+  padding:5px;
 }
 .work-experience{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
@@ -48,7 +53,6 @@ hr{
 .work-details{
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   flex-direction: column;
   width: 100%;
   margin: 5px 0;
