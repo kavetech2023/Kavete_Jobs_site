@@ -1,26 +1,15 @@
-import React, {useState} from "react";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+import React, {useState,useRef} from "react";
+
 import "./Edit.css";
 
 const Edit = () => {
 
-  const [loader, setLoader] = useState(false);
+  const componentRef = useRef();
+  const handlePrintRTP = useReactToPrint({
+    content: () => componentRef.current,
+  });
 
-  const downloadPDF = () => {
-    const capture = document.querySelector(".app-box");
-    setLoader(true);
-    html2canvas(capture).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const doc = new jsPDF('p', 'mm', 'a4');
-        const componentWidth = doc.internal.pageSize.getWidth();
-        const componentHeight = doc.internal.pageSize.getHeight();
-        doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
-        setLoader(false);
-        doc.save("your-cv.pdf");
-    });
 
-  }
 
   return (
     <div className="fadein">
@@ -30,7 +19,7 @@ const Edit = () => {
       <div className="app-box">
 
 
-        <div className="cv">
+        <div className="cv" ref={componentRef}>
           <div className="personal-info">
             <div className="username">
               <h1>Kevin Kavete Muthini</h1>
@@ -215,14 +204,9 @@ const Edit = () => {
 
 
 
-        <button onClick={downloadPDF}>
-          {loader ? 
-          (
-            <span>Downloading</span>
-          ) : ( 
-            <span>Download your CV</span>
-          )}
-        </button>
+        
+
+        <button onClick={handlePrintRTP}>Print with React to Print</button>
         </div>
 
 
