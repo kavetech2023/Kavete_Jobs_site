@@ -66,9 +66,10 @@
     cursor: pointer;
 }
 .navbar .user-profile img{
-    width: 34px;
+    margin-top: 2px;
+    width: 32px;
     border-radius: 100%;
-    border: 1px solid #eee;
+    border: 2px solid white;
 }
 .dropdown {
     position: relative;
