@@ -63,6 +63,7 @@ hr{
 .work-list{
   display: flex;
   justify-content: flex-start;
+  margin-left: 40px;
   align-items: center;
   width: 100%;
 }

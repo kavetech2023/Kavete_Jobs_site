@@ -52,7 +52,7 @@ const Edit = () => {
 
                 <div className="work-list">
                   <ul>
-                    <li></li>
+                    <li>Made beats by dre headphones popular.</li>
                     <li></li>
                     <li></li>
                     <li></li>

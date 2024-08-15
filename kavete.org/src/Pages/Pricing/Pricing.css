@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px;
-    align-items: center;
     width: 100%;
 }
 .cover-letter h1{
@@ -13,7 +12,8 @@
     margin: 1rem 0;
 }
 .cover-letter p{
-    font-size: 12px;
+    
+    font-size: 13px;
     color: #333;
     margin: 10px 0;
 }
