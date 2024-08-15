@@ -1,4 +1,5 @@
 import React, {useState,useRef} from "react";
+import { useReactToPrint } from "react-to-print";
 
 import "./Edit.css";
 
