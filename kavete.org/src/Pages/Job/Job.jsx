@@ -6,13 +6,14 @@ import { FaHeart } from "react-icons/fa";
 import Navbar from "../../Components/Navbar/Navbar";
 
 
-const Job = () => {
+const Job = ({setNotification}) => {
   const { jobId } = useParams();
   const [jobData, setJobData] = useState({});
-  const [savedJobs, setSavedJobs] = useState("Save Job");
+  const [savedJobs, setSavedJobs] = useState("Add Job");
   const saveJob = () => {
 
-    setSavedJobs("Job Saved");
+    setNotification(+1);
+    setSavedJobs("Job Added");
   };
 
   const fetchJobData = async () => {

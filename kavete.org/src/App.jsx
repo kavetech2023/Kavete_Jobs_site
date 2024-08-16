@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Job from "./Pages/Job/Job";
@@ -13,11 +13,11 @@ import Donate from "./Pages/Donate/Donate";
 
 
 const App = () => {
- 
+const [notification, setNotification] = useState(0);
   
   return (
     <div className="app">
-      <Navbar />
+      <Navbar notification={notification}/>
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/editcv" element={<Edit />} />
@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/donate" element={<Donate />} />
-          <Route path="/job/:jobId" element={<Job />} />
+          <Route path="/job/:jobId" element={<Job setNotification={setNotification} />} />
         </Routes>
       <Footer />
     

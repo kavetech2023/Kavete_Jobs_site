@@ -11,7 +11,7 @@ import { TiContacts } from "react-icons/ti";
 
 
 
-const Navbar = () => {
+const Navbar = ({notification}) => {
   const [sidebar, setSidebar] = useState(false);
   const [text, setText] = useState("Menu");
   const [login, setLogin ] = useState(false);
@@ -53,7 +53,7 @@ const Navbar = () => {
       <div className="nav-right">
             <div onClick={toggleLogin} className="user-profile">
               <div className="dropdown">
-                <div className="notification">1</div>
+                <div className="notification">{notification}</div>
               <img src="https://via.placeholder.com/150" alt="" />
               
               <div className={`google-button ${login? "": "display-item"}`}>

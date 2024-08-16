@@ -34,7 +34,7 @@ const Edit = () => {
         <div className="cv" ref={componentRef}>
           <div className="personal-info">
             <div className="username">
-              <h1>Kevin Kavete Muthini</h1>
+              <h1>Jina Yako Hapa</h1>
             </div>
             
             <div className="contacts">
