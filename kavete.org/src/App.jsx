@@ -8,6 +8,7 @@ import Pricing from "./Pages/Pricing/Pricing";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import { Routes, Route} from "react-router-dom";
+import Donate from "./Pages/Donate/Donate";
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/donate" element={<Donate />} />
           <Route path="/job/:jobId" element={<Job />} />
         </Routes>
       <Footer />

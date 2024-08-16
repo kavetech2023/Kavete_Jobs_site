@@ -62,7 +62,7 @@ const Navbar = () => {
               </div>
                 
             </div>
-          <button className="country-button">Country</button>
+          <Link to={"/donate"} className="country-button"><button>Donate</button></Link>
           <button className="menu-button" onClick={toggleSidebar}>{text}</button>
           
       </div>
@@ -84,7 +84,6 @@ const Navbar = () => {
                 <span><FaHome /></span>
                 <span>Home</span>
             </Link>
-            <span className="tooltip"></span>
             </li>
 
             <li>
@@ -92,7 +91,6 @@ const Navbar = () => {
                 <span><MdModeEdit /></span>
                 <span>My Cv</span>
             </Link>
-            <span className="tooltip"></span>
             </li> 
             
             <li>
@@ -100,20 +98,22 @@ const Navbar = () => {
             <span><IoIosPricetags /></span>
             <span>My cover letter</span>
             </Link>
-            <span className="tooltip"></span>
             </li> 
             
             <li><Link to={"/about"} onClick={toggleSidebar}>
             <span><SiAboutdotme /></span>
                 <span>About</span>
             </Link>
-            <span className="tooltip"></span>
             </li> 
             <li><Link to={"/contact"} onClick={toggleSidebar}>
             <span><TiContacts /></span>
                 <span>Contact us</span>
             </Link>
-            <span className="tooltip"></span>
+            </li>
+            <li><Link to={"/donate"} onClick={toggleSidebar}>
+            <span><TiContacts /></span>
+                <span>Donate</span>
+            </Link>
             </li>
             
         </ul>
