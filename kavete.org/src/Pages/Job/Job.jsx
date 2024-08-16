@@ -3,6 +3,7 @@ import "./Job.css";
 import { useParams } from "react-router-dom";
 import { jobs } from "../../Data/data";
 import { FaHeart } from "react-icons/fa";
+import Navbar from "../../Components/Navbar/Navbar";
 
 
 const Job = () => {

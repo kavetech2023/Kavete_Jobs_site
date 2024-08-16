@@ -33,7 +33,7 @@
     padding-left: 10px;
 }
 .hero button{
-    border: none;
+    border: 1px solid white;
     background: #7927ff;
     color:white;
     font-size:16px;

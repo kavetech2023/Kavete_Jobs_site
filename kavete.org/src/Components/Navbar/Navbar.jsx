@@ -55,8 +55,9 @@ const Navbar = () => {
               <div className="dropdown">
                 <div className="notification">1</div>
               <img src="https://via.placeholder.com/150" alt="" />
+              
               <div className={`google-button ${login? "": "display-item"}`}>
-                login goes here
+                
               </div>
               </div>
                 

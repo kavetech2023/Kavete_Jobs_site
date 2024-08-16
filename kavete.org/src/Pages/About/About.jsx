@@ -34,13 +34,6 @@ const About = () => {
         <img src={img} className="about-img"/>
         <span className="play-icon" onClick={()=>{setPlayVideo(true)}}><FaRegCirclePlay size={50}/></span>
         </div>
-        <div className="about-right">
-            <h2>Nurturing Tomorrow's leaders today!</h2>
-            <h3>About Us</h3>
-            <p>This is just some fake content to get started.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-        </div>
     </div>
     </div>
     <div className={`video-player ${playVideo?"":"hide"}`} ref={player} onClick={closePlayer}>
