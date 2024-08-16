@@ -1,4 +1,4 @@
-import Reac, { useRef } from "react";
+import React, { useRef } from "react";
 import "./Pricing.css";
 import { useReactToPrint } from "react-to-print";
 import { FiPrinter } from "react-icons/fi";
@@ -13,11 +13,10 @@ const Pricing = () => {
     content: () => componentRef.current,
   });
 
-  const handleMoreInfo = async (channelTitle) => {
-    setModal(true);
+  const handleMoreInfo = async () => {
     try {
       // Process the data with the Gemini API using the 
-      const processedData = await run("Explain to me " + channelTitle + "on youtube very briefly");
+      const processedData = await run("Create a Cover Letter for me, kavete.org. Graduated in 2014 from the University of Nico, ND, with a master's degree in arts. Completed an extensive internship with Traveller Inc., where I was the head promoter and head of design for Traveller Con 2022");
       setMoreInfoData(processedData);
       
     } catch (error) {
