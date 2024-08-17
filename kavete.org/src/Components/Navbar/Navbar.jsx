@@ -62,7 +62,7 @@ const Navbar = ({notification}) => {
               </div>
                 
             </div>
-          <Link to={"/donate"} className="country-button"><button>Donate</button></Link>
+          <button className="country-button">Donate</button>
           <button className="menu-button" onClick={toggleSidebar}>{text}</button>
           
       </div>
@@ -108,11 +108,6 @@ const Navbar = ({notification}) => {
             <li><Link to={"/contact"} onClick={toggleSidebar}>
             <span><TiContacts /></span>
                 <span>Contact us</span>
-            </Link>
-            </li>
-            <li><Link to={"/donate"} onClick={toggleSidebar}>
-            <span><TiContacts /></span>
-                <span>Donate</span>
             </Link>
             </li>
             

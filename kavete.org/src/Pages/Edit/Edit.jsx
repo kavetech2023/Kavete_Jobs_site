@@ -12,6 +12,12 @@ const Edit = () => {
     content: () => componentRef.current,
   });
 
+  const printMessage = () => {  
+
+    alert("We are working on this feature. It will be available soon. Thank you for your patience."); 
+
+  }
+
 
 
   return (
@@ -23,7 +29,7 @@ const Edit = () => {
           helpful to you..
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
-        <button onClick={handlePrintRTP}><span><GiTechnoHeart /></span> Update with Ai</button>
+        <button onClick={printMessage}><span><GiTechnoHeart /></span> Update with Ai</button>
         <button onClick={handlePrintRTP}><span><FiPrinter /></span> Print</button>
         </div>
         
