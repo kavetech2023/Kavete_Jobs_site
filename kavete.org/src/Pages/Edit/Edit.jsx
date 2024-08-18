@@ -17,7 +17,7 @@ const Edit = () => {
   });
 
 
-  useEffect(() => {
+
     const handleMoreInfo = async () => {
       try {
         const processedData = await run("Write a tailored resume for this digital marketing role at a random company. Don't include an objective statement or references, but do include a professional summary, my past 10 years of work experience with 3-5 bullet points per role, and incorporate the most important keywords from the job description in those achievements.");
@@ -31,13 +31,11 @@ const Edit = () => {
     };
   
     // Call handleMoreInfo only once on component mount
-    handleMoreInfo();
+   
   
     // Cleanup function (optional, but recommended for potential side effects)
-    return () => {
-      // Any necessary cleanup logic, such as canceling subscriptions or timeouts
-    };
-  }, []);
+  
+  
 
 
 

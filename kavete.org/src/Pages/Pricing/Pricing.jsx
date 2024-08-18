@@ -16,7 +16,6 @@ const Pricing = () => {
   });
 
 
-  useEffect(() => {
     const handleMoreInfo = async () => {
       try {
         const processedData = await run("Create a Cover Letter for me, kavete.org. Graduated in 2014 from the University of Nico, ND, with a master's degree in arts. Completed an extensive internship with Traveller Inc., where I was the head promoter and head of design for Traveller Con 2022");
@@ -29,14 +28,8 @@ const Pricing = () => {
       }
     };
   
-    // Call handleMoreInfo only once on component mount
-    handleMoreInfo();
-  
-    // Cleanup function (optional, but recommended for potential side effects)
-    return () => {
-      // Any necessary cleanup logic, such as canceling subscriptions or timeouts
-    };
-  }, []);
+
+ 
 
 
 
@@ -85,9 +78,14 @@ const Pricing = () => {
       <div className="app-box">
         <div className="cover-letter" ref={componentRef}>
 
-        <div className="loading-screen">
+        {moreInfoData ? (
+          <p dangerouslySetInnerHTML={{ __html: moreInfoData }} />
+        ) : (
+          <div className="loading-screen">
               <div className="loader"></div>
           </div>
+          
+        )}
         
         </div>
       </div>
