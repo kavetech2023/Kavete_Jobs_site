@@ -1,4 +1,4 @@
-import React, { useRef,useState } from "react";
+import React, { useEffect, useRef,useState } from "react";
 import "./Pricing.css";
 import { useReactToPrint } from "react-to-print";
 import { FiPrinter } from "react-icons/fi";
@@ -6,6 +6,7 @@ import { GiTechnoHeart } from "react-icons/gi";
 import run from "../../config/gemini";
 
 const Pricing = () => {
+  
   const [moreInfoData, setMoreInfoData] = useState(null);
 
   
@@ -14,23 +15,28 @@ const Pricing = () => {
     content: () => componentRef.current,
   });
 
-  const handleMoreInfo = async () => {
-    try {
-      // Process the data with the Gemini API using the 
-      const processedData = await run("Create a Cover Letter for me, kavete.org. Graduated in 2014 from the University of Nico, ND, with a master's degree in arts. Completed an extensive internship with Traveller Inc., where I was the head promoter and head of design for Traveller Con 2022");
 
-      // Format the processed data
-    const formattedData = formatData(processedData);
-
-    setMoreInfoData(formattedData);
-
-
-      
-    } catch (error) {
-      console.error("Error processing data:", error);
-      // Handle errors gracefully (e.g., display an error message)
-    }
-  };
+  useEffect(() => {
+    const handleMoreInfo = async () => {
+      try {
+        const processedData = await run("Create a Cover Letter for me, kavete.org. Graduated in 2014 from the University of Nico, ND, with a master's degree in arts. Completed an extensive internship with Traveller Inc., where I was the head promoter and head of design for Traveller Con 2022");
+        const formattedData = formatData(processedData); // Assuming formatData exists to format the data
+  
+        setMoreInfoData(formattedData);
+      } catch (error) {
+        console.error("Error processing data:", error);
+        // Handle errors gracefully (e.g., display an error message to the user)
+      }
+    };
+  
+    // Call handleMoreInfo only once on component mount
+    handleMoreInfo();
+  
+    // Cleanup function (optional, but recommended for potential side effects)
+    return () => {
+      // Any necessary cleanup logic, such as canceling subscriptions or timeouts
+    };
+  }, []);
 
 
 
@@ -70,14 +76,19 @@ const Pricing = () => {
           helpful to you..
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
-        <button onClick={() => handleMoreInfo()}><span><GiTechnoHeart /></span> Update with Ai</button>
+          <button onClick={() => handleMoreInfo()} disabled={moreInfoData !== null}><span><GiTechnoHeart /></span> Update with Ai</button>
+        
         <button onClick={handlePrintRTP}><span><FiPrinter /></span> Print</button>
         </div>
       </div>
 
       <div className="app-box">
         <div className="cover-letter" ref={componentRef}>
-        <p dangerouslySetInnerHTML={{ __html: moreInfoData }} />
+
+        <div className="loading-screen">
+              <div className="loader"></div>
+          </div>
+        
         </div>
       </div>
     </div>

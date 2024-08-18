@@ -1,23 +1,70 @@
-import React, {useState,useRef} from "react";
+import React, {useState,useRef, useEffect} from "react";
 import { useReactToPrint } from "react-to-print";
 import { FiPrinter } from "react-icons/fi";
 import { GiTechnoHeart } from "react-icons/gi";
+import run from "../../config/gemini";
 
 import "./Edit.css";
 
 const Edit = () => {
 
+  const [moreInfoData, setMoreInfoData] = useState(null);
+
+  
   const componentRef = useRef();
   const handlePrintRTP = useReactToPrint({
     content: () => componentRef.current,
   });
 
-  const printMessage = () => {  
 
-    alert("We are working on this feature. It will be available soon. Thank you for your patience."); 
+  useEffect(() => {
+    const handleMoreInfo = async () => {
+      try {
+        const processedData = await run("Write a tailored resume for this digital marketing role at a random company. Don't include an objective statement or references, but do include a professional summary, my past 10 years of work experience with 3-5 bullet points per role, and incorporate the most important keywords from the job description in those achievements.");
+        const formattedData = formatData(processedData); // Assuming formatData exists to format the data
+  
+        setMoreInfoData(formattedData);
+      } catch (error) {
+        console.error("Error processing data:", error);
+        // Handle errors gracefully (e.g., display an error message to the user)
+      }
+    };
+  
+    // Call handleMoreInfo only once on component mount
+    handleMoreInfo();
+  
+    // Cleanup function (optional, but recommended for potential side effects)
+    return () => {
+      // Any necessary cleanup logic, such as canceling subscriptions or timeouts
+    };
+  }, []);
 
+
+
+
+  function formatData(data) {
+    // Split the data by newlines
+    const lines = data.split(/\r?\n/);
+  
+    // Initialize empty string for formatted data
+    let formattedString = "";
+  
+    // Loop through each line
+    for (const line of lines) {
+      if (line.startsWith("##")) {
+        // If line starts with ##, add bold tag
+        formattedString += "<b>";
+      } else if (line.endsWith("##")) {
+        // If line ends with ##, add closing bold tag
+        formattedString += "</b>";
+      } else {
+        // Otherwise, add the line with two line breaks
+        formattedString += line + "<br><br>";
+      }
+    }
+  
+    return formattedString;
   }
-
 
 
   return (
@@ -29,7 +76,7 @@ const Edit = () => {
           helpful to you..
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
-        <button onClick={printMessage}><span><GiTechnoHeart /></span> Update with Ai</button>
+        <button onClick={() => handleMoreInfo()} disabled={moreInfoData !== null}><span><GiTechnoHeart /></span> Update with Ai</button>
         <button onClick={handlePrintRTP}><span><FiPrinter /></span> Print</button>
         </div>
         
@@ -38,197 +85,17 @@ const Edit = () => {
 
 
         <div className="cv" ref={componentRef}>
-          <div className="personal-info">
-            <div className="username">
-              <h1>Jina Yako Hapa</h1>
-            </div>
-            
-            <div className="contacts">
-              <div>Nairobi</div>
-              <div>LinkedIn</div>
-              <div>Phone: +254798566564</div>
-              <div>Email:</div>
-            </div>
-            </div>
-
-            <div className="work-experience">
-              <h2>Work Experience</h2>
-              <hr />
-              <div className="work-details">
-                <div className="left-right">
-                <div className="company">
-                  <h3>Company Name</h3>
-                  <p>Position</p>
-                  
-                </div>
-                <div className="place-and-date">
-                  <p>Location</p>
-                  <p>Start Date - End Date</p>
-                </div>
-                </div>
-
-                <div className="work-list">
-                  <ul>
-                    <li>Made beats by dre headphones popular.</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="work-details">
-                <div className="left-right">
-                <div className="company">
-                  <h3>Company Name</h3>
-                  <p>Position</p>
-                  
-                </div>
-                <div className="place-and-date">
-                  <p>Location</p>
-                  <p>Start Date - End Date</p>
-                </div>
-                </div>
-
-                <div className="work-list">
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="work-details">
-                <div className="left-right">
-                <div className="company">
-                  <h3>Company Name</h3>
-                  <p>Position</p>
-                  
-                </div>
-                <div className="place-and-date">
-                  <p>Location</p>
-                  <p>Start Date - End Date</p>
-                </div>
-                </div>
-
-                <div className="work-list">
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="work-experience">
-              <h2>Awards</h2>
-              <hr />
-              <div className="work-details">
-                <div className="left-right">
-                <div className="company">
-                  <h3>Company Name</h3>
-                  <p>Position</p>
-                  
-                </div>
-                <div className="place-and-date">
-                  <p>Location</p>
-                  <p>Start Date - End Date</p>
-                </div>
-                </div>
-
-                <div className="work-list">
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div>
-              </div>
-              </div>
-
-            <div className="work-experience">
-              <h2>Education</h2>
-              <hr />
-              <div className="work-details">
-                <div className="left-right">
-                <div className="company">
-                  <h3>Company Name</h3>
-                  <p>Position</p>
-                  
-                </div>
-                <div className="place-and-date">
-                  <p>Location</p>
-                  <p>Start Date - End Date</p>
-                </div>
-                </div>
-
-                <div className="work-list">
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div>
-              </div>
-              </div>
-
-
-              <div className="work-experience">
-              <h2>Skills and Interests</h2>
-              <hr />
-              <div className="work-details">
-                <div className="left-right">
-                <div className="company">
-                  <h3>Company Name</h3>
-                  <p>Position</p>
-                  
-                </div>
-                <div className="place-and-date">
-                  <p>Location</p>
-                  <p>Start Date - End Date</p>
-                </div>
-                </div>
-
-                <div className="work-list">
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </div>
-              </div>
-              </div>
-            
+        {moreInfoData ? (
+          <p dangerouslySetInnerHTML={{ __html: moreInfoData }} />
+        ) : (
+          <div className="loading-screen">
+              <div className="loader"></div>
           </div>
-
-
-
+          
+        )}
         </div>
-     
-
-
-
-
-        
-
-        
-        </div>
-
-
-  
+</div>
+  </div>
   );
 };
 
