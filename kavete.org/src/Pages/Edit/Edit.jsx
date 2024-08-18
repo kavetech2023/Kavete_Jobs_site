@@ -77,7 +77,7 @@ const Edit = () => {
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
         <button onClick={() => handleMoreInfo()} disabled={moreInfoData !== null}><span><GiTechnoHeart /></span> Update with Ai</button>
-        <button onClick={handlePrintRTP}><span><FiPrinter /></span> Print</button>
+        <button onClick={handlePrintRTP} disabled={moreInfoData ? false : true}><span><FiPrinter /></span> Print</button>
         </div>
         
       </div>
