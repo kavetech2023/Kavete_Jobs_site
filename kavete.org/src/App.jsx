@@ -8,6 +8,7 @@ import Pricing from "./Pages/Pricing/Pricing";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import { Routes, Route} from "react-router-dom";
+import Authentication from "./Components/Authentication/Authentication";
 
 
 
@@ -23,6 +24,7 @@ const [notification, setNotification] = useState(0);
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/auth" element={<Authentication />} />
           <Route path="/job/:jobId" element={<Job setNotification={setNotification} />} />
         </Routes>
       <Footer />

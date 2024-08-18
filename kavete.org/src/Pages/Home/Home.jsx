@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 
-  const { allJobs } = useContext(JobContext);
-  const [displayJob, setDisplayJob] = useState([]);
+  const { allJobs, category } = useContext(JobContext);
+
+
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [jobsPerPage, setJobsPerPage] = useState(5);
   const [input, setInput] = useState("");
+  const [displayJob, setDisplayJob] = useState([]);
 
   const inputHandler = (e) => {
     //when inpu
@@ -23,7 +23,7 @@ const Home = () => {
 
   const searchHandler = async (e) => {
     e.preventDefault();
-    const jobs = await allJobs?.filter((item) => {
+    const jobs = await allJobs.results.categories?.filter((item) => {
       console.log("fetched");
       return item.title.toLowerCase().includes(input.toLowerCase());
     });
@@ -34,21 +34,13 @@ const Home = () => {
     setDisplayJob(allJobs);
   }, [allJobs]);
 
-  // Get current jobs
-  const indexOfLastJob = currentPage * jobsPerPage;
-  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
-  const currentJobs = displayJob.slice(indexOfFirstJob, indexOfLastJob);
 
-  // Change page
 
-  const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(displayJob.length / jobsPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
+ 
   return (
     <div className="fadein">
+      
       <div className="hero">
         <h1>Largest Africa Job Board</h1>
         <p>
@@ -65,8 +57,10 @@ const Home = () => {
             required
           />
 
+
+          
           <datalist id="jobs-list">
-            {allJobs.map((item, index) => (
+            {allJobs?.results && allJobs.results.map((item, index) => (
               <option key={index} value={item.title} />
             ))}
           </datalist>
@@ -82,28 +76,48 @@ const Home = () => {
           <p>Job Title</p>
           <p>Location</p>
           <p className="ta">Company</p>
-          <p className="job-peak">Salary Range</p>
+          <p className="job-peak">Date</p>
         </div>
-        {currentJobs.slice(0, 10).map((job, index) => (
-          <Link to={`/job/${job.id}`} className="table-layout" key={index}>
-            <p>{job.id }</p>
+        {allJobs?.results && allJobs.results.map((job, index) => (
+          <Link to={`/job/${index + 1}`} className="table-layout" key={index}>
+            <p> {index + 1}</p>
             <div>
               <span><FaRegCheckCircle style={{color:"green"}} /></span>
-              <p>{job.title}</p>
+              <p> {job.name}</p>
             </div>
 
-            <p>{job.location}</p>
-            <p className="ta">{job.company}</p>
-            <p className="job-peak">{job.salary}</p>
+            <p>{job.locations.length > 0 ? job.locations[0].name : 'No location available'}</p>
+            <p className="ta">{job.company.name}</p>
+            <p className="job-peak">{new Date(job.publication_date).toLocaleDateString()}</p>
           </Link>
         ))}
         <div className="pagination-table">
-          {pageNumbers.map((number) => ( 
-          <p className="paginate" key={number} onClick={() => setCurrentPage(number)}>
-            <span>{number}</span>
+         
+          <p className="paginate">
+            <span>1</span>
+            </p>
+          <p className="paginate">
+            <span>2</span>
+            </p>
+            <p className="paginate">
+            <span>3</span>
+            </p>
+            <p className="paginate">
+            <span>4</span>
+            </p>
+            <p className="paginate">
+            <span>5</span>
+            </p>
+            <p className="paginate">
+            <span>6</span>
+            </p>
+            <p className="paginate">
+            <span>7</span>
+            </p>
+            <p className="paginate">
+            <span>8</span>
           </p>
-          ))
-}
+
         </div>
       </div>
     </div>

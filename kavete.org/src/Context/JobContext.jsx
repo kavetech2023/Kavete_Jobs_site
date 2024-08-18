@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import {jobs} from "../Data/data";
+import {categories} from "../Data/categories.js";
 
 
 export const JobContext = createContext();
@@ -7,15 +7,20 @@ export const JobContext = createContext();
 const JobContextProvider = (props) =>{
 
     const [allJobs, setAllJobs] = useState([])
-    const [language, setLanguage] = useState({
-        languages: "English",
-        languageCode: "en"
-    })
+    const [jobs, setJobs] = useState([]);
+    const [category, setCategory] = useState(
+        categories.map((job) => job.category)
+    );
+   
 
     const fetchJobs = async () => {
         try {
-          setAllJobs(jobs);
-          console.log('Jobs fetched:', jobs);
+            // Fetch jobs from an API
+        const response = await fetch('https://www.themuse.com/api/public/jobs?page=1&descending=true&api_key=fed43051b601c1ccf43c3661353dde9b92cec37f875f6136bc74588f08463dc0')
+            .then(response => response.json());
+             setAllJobs(response)
+             setJobs(response.results)
+          console.log('Jobs fetched:', response.results);
         } catch (error) {
           console.error('Error fetching jobs:', error);
         }
@@ -23,12 +28,12 @@ const JobContextProvider = (props) =>{
 
     useEffect(() => {
         fetchJobs();
-    }, [language]);
+    }, []);
 
     const contextValue ={
         allJobs,
-        language,
-        setLanguage
+        category,
+        jobs,
     }
 
     return (
