@@ -54,11 +54,17 @@
     height: 250px;
     margin: auto;
 }
-.job-info{
-    width:90%;
+.job-info, .job-contents{
+    width:95%;
     margin: 10px;
     display: flex;
     flex-direction: column;
+    word-wrap: wrap;
+    line-height: 1.5;
+    padding:10px;
+}
+.job-contents ul{
+    padding: 20px;
 }
 .job-info ul{
     list-style: none;
