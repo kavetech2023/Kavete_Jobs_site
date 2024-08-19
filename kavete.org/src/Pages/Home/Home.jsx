@@ -45,23 +45,19 @@ const Home = () => {
           Welcome to the Africa's largest Jobs board for remote and hybrid jobs.
         </p>
         <form>
-        <select onChange={categoryHandler}>
+        <select onChange={categoryHandler} value={category}>
             <option value="">Select Job Category</option>
             {categories.map((category, index) => (
               <option key={index}  value={category}>{category.replace(/%20/g, " ")}</option>
             ))}
           </select>
 
-  
+  <select onChange={levelHandler} value={level}>
+    <option value="flexible/remote">Remote</option>
+    <option value="">On site</option>    
+  </select>
 
-          <select onChange={levelHandler}>
-            <option value="">Select Job Level</option>
-            <option value="Internship">Intern</option>
-            <option value="Entry%20Level">Junior</option>
-            <option value="Mid%20Level">Middle</option>
-            <option value="Senior%20Level">Senior</option>
-            <option value="management">Management</option>
-          </select>
+          
         </form>
       </div>
 
