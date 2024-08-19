@@ -36,7 +36,7 @@ const Job = ({ setNotification }) => {
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
         <button > Update with Ai</button>
-        <button > Print</button>
+        <Link to={"/"}><button > back </button></Link>
         </div>
         
       </div>
