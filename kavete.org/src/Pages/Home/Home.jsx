@@ -54,7 +54,6 @@ const Home = () => {
 
   <select onChange={levelHandler} value={level}>
    <option value="">All Job Levels</option>
-    <option value="Entry%20Level">Entry Level</option>
     <option value="Mid%20Level">Mid Level</option>
     <option value="Senior%20Level">Senior Level</option>
     <option value="management">Management</option>    
