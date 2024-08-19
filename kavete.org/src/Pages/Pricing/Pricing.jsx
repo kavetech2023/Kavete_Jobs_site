@@ -71,7 +71,7 @@ const Pricing = () => {
           helpful to you..
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
-          <button onClick={() => handleMoreInfo()} ><span><GiTechnoHeart /></span> Update with Ai</button>
+          <button onClick={() => handleMoreInfo()} ><span><GiTechnoHeart /></span> Update Cover Letter</button>
         
         <button onClick={handlePrintRTP} disabled={moreInfoData ? true : false}><span><FiPrinter /></span> Download</button>
         </div>

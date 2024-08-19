@@ -40,12 +40,7 @@ const Job = ({ setNotification }) => {
           <Link to={"/"}>
             <button><IoMdArrowRoundBack /> back </button>
           </Link>
-          <button onClick={handlePrintRTP}>
-            <span>
-              <FiPrinter />
-            </span>{" "}
-            Download Job
-          </button>
+          
         </div>
       </div>
 
@@ -117,6 +112,12 @@ const Job = ({ setNotification }) => {
                 </span>
                 <span>{savedJobs}</span>
               </button>
+              <button onClick={handlePrintRTP}>
+            <span>
+              <FiPrinter />
+            </span>{" "}
+            Download Job
+          </button>
             </div>
           </>
         ) : (

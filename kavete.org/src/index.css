@@ -25,6 +25,16 @@ a{
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+button{
+  border: 1px solid white;
+  background: #7927ff;
+  color:white;
+  font-size:16px;
+  padding:10px 30px;
+  border-radius: 5px;
+  cursor:pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .hero{
   max-width: 600px;
   margin: 120px auto 50px auto;
