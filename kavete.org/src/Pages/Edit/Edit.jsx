@@ -1,12 +1,13 @@
-import React, {useState,useRef, useEffect} from "react";
+import React, {useState,useRef, useEffect, useContext} from "react";
 import { useReactToPrint } from "react-to-print";
 import { FiPrinter } from "react-icons/fi";
 import { GiTechnoHeart } from "react-icons/gi";
 import run from "../../config/gemini";
-
 import "./Edit.css";
+import { JobContext } from "../../Context/JobContext";
 
 const Edit = () => {
+  const {setData } = useContext(JobContext);
 
   const [moreInfoData, setMoreInfoData] = useState(null);
 
@@ -20,7 +21,7 @@ const Edit = () => {
 
     const handleMoreInfo = async () => {
       try {
-        const processedData = await run("Write a tailored resume for this digital marketing role at a random company. Don't include an objective statement or references, but do include a professional summary, my past 10 years of work experience with 3-5 bullet points per role, and incorporate the most important keywords from the job description in those achievements.");
+        const processedData = await run(`Write a tailored resume based on this data: ${allJobs.results[0].name}`);
         const formattedData = formatData(processedData); // Assuming formatData exists to format the data
   
         setMoreInfoData(formattedData);
@@ -30,16 +31,7 @@ const Edit = () => {
       }
     };
   
-    // Call handleMoreInfo only once on component mount
-   
-  
-    // Cleanup function (optional, but recommended for potential side effects)
-  
-  
-
-
-
-
+ 
   function formatData(data) {
     // Split the data by newlines
     const lines = data.split(/\r?\n/);
