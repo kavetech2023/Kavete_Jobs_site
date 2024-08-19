@@ -84,26 +84,6 @@ const Job = ({ setNotification }) => {
               </li>
               <li><Link to={`${jobData[jobId -1].refs.landing_page}`}>Page</Link></li>
             </ul>
-            <ul>
-              <li>
-                <b>Benefits:</b>
-              </li>
-              <li></li>
-            </ul>
-            <ul>
-              <li>
-                <b>Perks:</b>
-              </li>
-              <li></li>
-            </ul>
-            <ul>
-              <li>
-                <b>Link:</b>
-              </li>
-              <li>
-                <a>Go to Page</a>
-              </li>
-            </ul>
           </div>
 
           <div className="job-contents">

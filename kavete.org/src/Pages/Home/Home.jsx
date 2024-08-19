@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaRegCheckCircle } from "react-icons/fa";
 import "./Home.css";
+import { categories } from "../../Data/categories";
 import { JobContext } from "../../Context/JobContext";
 import { Link } from "react-router-dom";
 
 const Home = () => {
 
-  const { allJobs, category } = useContext(JobContext);
+  const { allJobs, category, setCategory, setPage } = useContext(JobContext);
 
 
   const [loading, setLoading] = useState(false);
@@ -30,6 +31,16 @@ const Home = () => {
     setDisplayJob(jobs);
   };
 
+  const categoryHandler = (e) => {
+
+    setCategory(e.target.value); 
+    setPage(1); 
+    console.log(e.target.value);
+  };
+
+
+
+
   useEffect(() => {
     setDisplayJob(allJobs);
   }, [allJobs]);
@@ -38,6 +49,10 @@ const Home = () => {
 
 
  
+  const handlePageClick = (pageNumber) => {
+    setPage(pageNumber);
+  };
+
   return (
     <div className="fadein">
       
@@ -48,14 +63,12 @@ const Home = () => {
           about jobs.
         </p>
         <form onSubmit={searchHandler}>
-          <input
-            onChange={inputHandler}
-            list="jobs-list"
-            value={input}
-            type="text"
-            placeholder="Search for jobs"
-            required
-          />
+        <select onChange={categoryHandler}>
+            <option value="all">All Categories</option>
+            {categories.map((category, index) => (
+              <option key={index} value={category}>{category}</option>
+            ))}
+          </select>
 
 
           
@@ -67,6 +80,7 @@ const Home = () => {
 
 
           <button>Search</button>
+          
         </form>
       </div>
 
@@ -92,32 +106,15 @@ const Home = () => {
           </Link>
         ))}
         <div className="pagination-table">
-         
-          <p className="paginate">
-            <span>1</span>
+          {[1, 2, 3, 4, 5,].map((pageNumber) => (
+            <p
+              key={pageNumber}
+              className="paginate"
+              onClick={() => handlePageClick(pageNumber)}
+            >
+              <span>{pageNumber}</span>
             </p>
-          <p className="paginate">
-            <span>2</span>
-            </p>
-            <p className="paginate">
-            <span>3</span>
-            </p>
-            <p className="paginate">
-            <span>4</span>
-            </p>
-            <p className="paginate">
-            <span>5</span>
-            </p>
-            <p className="paginate">
-            <span>6</span>
-            </p>
-            <p className="paginate">
-            <span>7</span>
-            </p>
-            <p className="paginate">
-            <span>8</span>
-          </p>
-
+          ))}
         </div>
       </div>
     </div>

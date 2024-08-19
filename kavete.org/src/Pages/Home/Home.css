@@ -25,7 +25,7 @@
     align-items: center;
     gap:10px;
 }
-.hero input{
+.hero select{
     flex:1;
     font-size: 16px;
     outline:none;
