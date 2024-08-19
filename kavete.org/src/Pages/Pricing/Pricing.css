@@ -1,9 +1,12 @@
 .cover-letter{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px;
     width: 100%;
+}
+.show{
+    display: flex;
 }
 .cover-letter h1{
     font-size: 2.5rem;

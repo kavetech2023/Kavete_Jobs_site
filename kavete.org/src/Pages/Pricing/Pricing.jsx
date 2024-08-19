@@ -10,6 +10,7 @@ const Pricing = () => {
   const {saved } = useContext(JobContext);
   
   const [moreInfoData, setMoreInfoData] = useState(null);
+  const [close, setClose] = useState(false);
 
   
   const componentRef = useRef();
@@ -17,6 +18,9 @@ const Pricing = () => {
     content: () => componentRef.current,
   });
 
+    const open = () => {
+      close ? setClose(false) : setClose(true);
+    }
 
     const handleMoreInfo = async () => {
       try {
@@ -28,6 +32,7 @@ const Pricing = () => {
         console.error("Error processing data:", error);
         // Handle errors gracefully (e.g., display an error message to the user)
       }
+      
     };
   
 
@@ -71,14 +76,14 @@ const Pricing = () => {
           helpful to you..
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
-          <button onClick={() => handleMoreInfo()} ><span><GiTechnoHeart /></span> Update Cover Letter</button>
+          <button onClick={() => { handleMoreInfo(); open(); }}><span><GiTechnoHeart /></span> Update Cover Letter</button>
         
-        <button onClick={handlePrintRTP} disabled={moreInfoData ? true : false}><span><FiPrinter /></span> Download</button>
+        <button onClick={handlePrintRTP}><span><FiPrinter /></span> Download</button>
         </div>
       </div>
 
       <div className="app-box">
-        <div className="cover-letter" ref={componentRef}>
+        <div className={`cover-letter ${close ? "show" : ""}`} ref={componentRef}>
 
         {moreInfoData ? (
           <p dangerouslySetInnerHTML={{ __html: moreInfoData }} />

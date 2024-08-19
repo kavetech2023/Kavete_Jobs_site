@@ -10,14 +10,17 @@ const Edit = () => {
   const {saved } = useContext(JobContext);
 
   const [moreInfoData, setMoreInfoData] = useState(null);
- console.log(saved);
+  const [close, setClose] = useState(false);
+
   
   const componentRef = useRef();
   const handlePrintRTP = useReactToPrint({
     content: () => componentRef.current,
   });
 
-    
+  const open = () => {
+    close ? setClose(false) : setClose(true);
+  }
 
     const handleMoreInfo = async () => {
       try {
@@ -66,15 +69,15 @@ const Edit = () => {
           helpful to you..
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
-        <button onClick={() => handleMoreInfo()} disabled={moreInfoData !== null}><span><GiTechnoHeart /></span> Update Cv</button>
-        <button onClick={handlePrintRTP} disabled={moreInfoData ? false : true}><span><FiPrinter /></span> Download</button>
+        <button onClick={() => { handleMoreInfo(); open(); }} ><span><GiTechnoHeart /></span> Update Cv</button>
+        <button onClick={handlePrintRTP}><span><FiPrinter /></span> Download</button>
         </div>
         
       </div>
       <div className="app-box">
 
 
-        <div className="cv" ref={componentRef}>
+        <div className={`cv ${close ? "show" : ""}`} ref={componentRef}>
         {moreInfoData ? (
           <p dangerouslySetInnerHTML={{ __html: moreInfoData }} />
         ) : (
