@@ -33,9 +33,7 @@ const Job = ({ setNotification }) => {
       <div className="hero">
         <h1>Job Details</h1>
         <p>
-          Look at the most popular price categories of your liking. May they be
-          helpful to you..
-        </p>
+          Please go through the details before applying!</p>
         <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
           <Link to={"/"}>
             <button><IoMdArrowRoundBack /> back </button>
