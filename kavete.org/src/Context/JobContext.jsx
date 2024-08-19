@@ -13,6 +13,7 @@ const JobContextProvider = (props) =>{
     );
     const [page, setPage] = useState(1);
     const [level, setJobLevel] = useState("")
+    const [saved, setSaved] = useState("");
     console.log(page);
    
 
@@ -42,6 +43,8 @@ const JobContextProvider = (props) =>{
         setPage,
         level,
         setJobLevel,
+        saved,
+        setSaved,
     }
 
     return (

@@ -1,11 +1,13 @@
-import React, { useEffect, useRef,useState } from "react";
+import React, { useContext, useEffect, useRef,useState } from "react";
 import "./Pricing.css";
 import { useReactToPrint } from "react-to-print";
 import { FiPrinter } from "react-icons/fi";
 import { GiTechnoHeart } from "react-icons/gi";
 import run from "../../config/gemini";
+import { JobContext } from "../../Context/JobContext";
 
 const Pricing = () => {
+  const {saved } = useContext(JobContext);
   
   const [moreInfoData, setMoreInfoData] = useState(null);
 
@@ -18,7 +20,7 @@ const Pricing = () => {
 
     const handleMoreInfo = async () => {
       try {
-        const processedData = await run("Create a Cover Letter for me, kavete.org. Graduated in 2014 from the University of Nico, ND, with a master's degree in arts. Completed an extensive internship with Traveller Inc., where I was the head promoter and head of design for Traveller Con 2022");
+        const processedData = await run("Create a Cover Letter for me, using the following data: "+saved); // Assuming run exists to process the data
         const formattedData = formatData(processedData); // Assuming formatData exists to format the data
   
         setMoreInfoData(formattedData);
@@ -71,7 +73,7 @@ const Pricing = () => {
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
           <button onClick={() => handleMoreInfo()} ><span><GiTechnoHeart /></span> Update with Ai</button>
         
-        <button onClick={handlePrintRTP} disabled={moreInfoData ? true : false}><span><FiPrinter /></span> Print</button>
+        <button onClick={handlePrintRTP} disabled={moreInfoData ? true : false}><span><FiPrinter /></span> Download</button>
         </div>
       </div>
 

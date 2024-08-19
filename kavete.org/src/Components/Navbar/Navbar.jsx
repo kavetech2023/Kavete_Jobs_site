@@ -49,7 +49,7 @@ const Navbar = ({notification}) => {
       <div className="nav-right">
             <Link to={"/auth"} className="user-profile">
               <div className="dropdown">
-                <div className="notification">{notification}</div>
+                <div className={`notification ${notification? "":"display"}`}>{notification}</div>
               <img src="https://via.placeholder.com/150" alt="" />
               
               <div className="google-button">

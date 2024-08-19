@@ -40,13 +40,13 @@ const Home = () => {
     <div className="fadein">
       
       <div className="hero">
-        <h1>Largest Africa Job Board</h1>
+        <h1>Largest Africa Remote-Jobs Board</h1>
         <p>
           Welcome to the Africa's largest Jobs board for remote and hybrid jobs.
         </p>
         <form>
         <select onChange={categoryHandler} value={category}>
-            <option value="">Select Job Category</option>
+            <option defaultValue={"Accounting%20and%20Finance"} >Select Job Category</option>
             {categories.map((category, index) => (
               <option key={index}  value={category}>{category.replace(/%20/g, " ")}</option>
             ))}

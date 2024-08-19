@@ -7,10 +7,10 @@ import "./Edit.css";
 import { JobContext } from "../../Context/JobContext";
 
 const Edit = () => {
-  const {setData } = useContext(JobContext);
+  const {saved } = useContext(JobContext);
 
   const [moreInfoData, setMoreInfoData] = useState(null);
-
+ console.log(saved);
   
   const componentRef = useRef();
   const handlePrintRTP = useReactToPrint({
@@ -21,7 +21,7 @@ const Edit = () => {
 
     const handleMoreInfo = async () => {
       try {
-        const processedData = await run(`Write a tailored resume based on this data: ${allJobs.results[0].name}`);
+        const processedData = await run(`Create a comprehensive CV for a position based on ${saved}. Include the following sections: Summary, Skills, Experience, Education, Projects, and Certifications. Tailor the CV to highlight some guessed Specific Skills or Achievements."`); // Assuming run exists to process the data
         const formattedData = formatData(processedData); // Assuming formatData exists to format the data
   
         setMoreInfoData(formattedData);
@@ -67,7 +67,7 @@ const Edit = () => {
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
         <button onClick={() => handleMoreInfo()} disabled={moreInfoData !== null}><span><GiTechnoHeart /></span> Update with Ai</button>
-        <button onClick={handlePrintRTP} disabled={moreInfoData ? false : true}><span><FiPrinter /></span> Print</button>
+        <button onClick={handlePrintRTP} disabled={moreInfoData ? false : true}><span><FiPrinter /></span> Download</button>
         </div>
         
       </div>
