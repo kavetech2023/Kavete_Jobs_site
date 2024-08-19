@@ -12,13 +12,14 @@ const JobContextProvider = (props) =>{
         categories.map((job) => job.category)
     );
     const [page, setPage] = useState(1);
+    const [jobtype, setJobType] = useState("flexible/remote")
     console.log(page);
    
 
     const fetchJobs = async () => {
         try {
             // Fetch jobs from an API
-        const response = await fetch(`https://www.themuse.com/api/public/jobs?category=${category}&page=${page}&descending=true&location=&api_key=fed43051b601c1ccf43c3661353dde9b92cec37f875f6136bc74588f08463dc0`)
+        const response = await fetch(`https://www.themuse.com/api/public/jobs?category=${category}&page=${page}&descending=true&location=${jobtype}&api_key=fed43051b601c1ccf43c3661353dde9b92cec37f875f6136bc74588f08463dc0`)
             .then(response => response.json());
              setAllJobs(response)
              setJobs(response.results)
@@ -38,7 +39,9 @@ const JobContextProvider = (props) =>{
         setCategory,
         jobs,
         page,
-        setPage
+        setPage,
+        jobtype,
+        setJobType,
     }
 
     return (

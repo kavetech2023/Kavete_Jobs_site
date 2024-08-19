@@ -7,29 +7,12 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 
-  const { allJobs, category, setCategory, setPage } = useContext(JobContext);
+  const { allJobs, category, jobtype,setJobType, setCategory, setPage } = useContext(JobContext);
 
-
-  const [loading, setLoading] = useState(false);
-  const [input, setInput] = useState("");
   const [displayJob, setDisplayJob] = useState([]);
 
-  const inputHandler = (e) => {
-    //when inpu
-    setInput(e.target.value);
-    if (e.target.value === "") {
-      setDisplayJob(allJobs);
-    }
-  };
+  
 
-  const searchHandler = async (e) => {
-    e.preventDefault();
-    const jobs = await allJobs.results.categories?.filter((item) => {
-      console.log("fetched");
-      return item.title.toLowerCase().includes(input.toLowerCase());
-    });
-    setDisplayJob(jobs);
-  };
 
   const categoryHandler = (e) => {
 
@@ -37,8 +20,6 @@ const Home = () => {
     setPage(1); 
     console.log(e.target.value);
   };
-
-
 
 
   useEffect(() => {
@@ -62,11 +43,11 @@ const Home = () => {
           Welcome to the Africa's largest Jobs board. Sign up to explore more
           about jobs.
         </p>
-        <form onSubmit={searchHandler}>
+        <form>
         <select onChange={categoryHandler}>
-            <option value="all">All Categories</option>
+            <option value="Account%20Management">Account Management</option>
             {categories.map((category, index) => (
-              <option key={index} value={category}>{category}</option>
+              <option key={index}  value={category}>{category.replace(/%20/g, " ")}</option>
             ))}
           </select>
 
@@ -79,7 +60,7 @@ const Home = () => {
           </datalist>
 
 
-          <button>Search</button>
+          <button>{jobtype}</button>
           
         </form>
       </div>
