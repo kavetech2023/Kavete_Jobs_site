@@ -65,8 +65,7 @@ const Edit = () => {
       <div className="hero">
         <h1>Your CV</h1>
         <p>
-          Look at the most popular price categories of your liking. May they be
-          helpful to you..
+          This Cv is generated based on the job you saved. You can update it by clicking the button below.
         </p>
         <div style={{display:"flex",flexDirection:"row",gap:"20px"}}>
         <button onClick={() => { handleMoreInfo(); open(); }} ><span><GiTechnoHeart /></span> Update Cv</button>
