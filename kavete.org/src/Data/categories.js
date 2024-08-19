@@ -1,5 +1,4 @@
 export const categories = [
-    "Accounting",
     "Accounting%20and%20Finance",
     "Account%20Management",
     "Account%20Management/Customer Success",

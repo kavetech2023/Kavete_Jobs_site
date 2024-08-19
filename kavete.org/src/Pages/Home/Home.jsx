@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 
-  const { allJobs, category, jobtype,setJobType, setCategory, setPage } = useContext(JobContext);
+  const { allJobs, category, level,setJobLevel, setCategory, setPage } = useContext(JobContext);
 
   const [displayJob, setDisplayJob] = useState([]);
 
@@ -15,11 +15,13 @@ const Home = () => {
 
 
   const categoryHandler = (e) => {
-
     setCategory(e.target.value); 
     setPage(1); 
-    console.log(e.target.value);
   };
+  const levelHandler = (e) => {
+    setJobLevel(e.target.value); 
+  };
+ 
 
 
   useEffect(() => {
@@ -40,28 +42,26 @@ const Home = () => {
       <div className="hero">
         <h1>Largest Africa Job Board</h1>
         <p>
-          Welcome to the Africa's largest Jobs board. Sign up to explore more
-          about jobs.
+          Welcome to the Africa's largest Jobs board for remote and hybrid jobs.
         </p>
         <form>
         <select onChange={categoryHandler}>
-            <option value="Account%20Management">Account Management</option>
+            <option value="">Select Job Category</option>
             {categories.map((category, index) => (
               <option key={index}  value={category}>{category.replace(/%20/g, " ")}</option>
             ))}
           </select>
 
+  
 
-          
-          <datalist id="jobs-list">
-            {allJobs?.results && allJobs.results.map((item, index) => (
-              <option key={index} value={item.title} />
-            ))}
-          </datalist>
-
-
-          <button>{jobtype}</button>
-          
+          <select onChange={levelHandler}>
+            <option value="">Select Job Level</option>
+            <option value="Internship">Intern</option>
+            <option value="Entry%20Level">Junior</option>
+            <option value="Mid%20Level">Middle</option>
+            <option value="Senior%20Level">Senior</option>
+            <option value="management">Management</option>
+          </select>
         </form>
       </div>
 
