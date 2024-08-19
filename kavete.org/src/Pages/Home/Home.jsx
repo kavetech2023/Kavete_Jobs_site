@@ -67,11 +67,11 @@ const Home = () => {
 
       <div className="job-table">
         <div className="table-layout no-hover">
-          <p>#</p>
-          <p>Job Title</p>
-          <p>Location</p>
-          <p className="ta">Company</p>
-          <p className="job-peak">Date</p>
+          <p><b>#</b></p>
+          <p><b>Job Title</b></p>
+          <p><b>Location</b></p>
+          <p className="ta"><b>Company</b></p>
+          <p className="job-peak"><b>Date</b></p>
         </div>
         {allJobs?.results && allJobs.results.map((job, index) => (
           <Link to={`/job/${index + 1}`} className="table-layout" key={index}>

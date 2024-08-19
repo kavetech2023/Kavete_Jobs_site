@@ -31,7 +31,7 @@
     outline:none;
     border:none;
     padding:10px;
-    padding-left: 10px;
+    background-color: white;
 }
 .hero button{
     border: 1px solid white;
