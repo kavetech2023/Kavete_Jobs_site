@@ -33,16 +33,7 @@
     padding:10px;
     background-color: white;
 }
-.hero button{
-    border: 1px solid white;
-    background: #7927ff;
-    color:white;
-    font-size:16px;
-    padding:10px 30px;
-    border-radius: 5px;
-    cursor:pointer;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+
 .job-table{
     max-width: 800px;
     color:black;
