@@ -73,9 +73,9 @@ const Home = () => {
         </div>
         {allJobs?.results && allJobs.results.map((job, index) => (
           <Link to={`/job/${index + 1}`} className="table-layout" key={index}>
-            <p> {index + 1}</p>
+            <p> <FaRegCheckCircle style={{color:"green"}} /></p>
             <div>
-              <span><FaRegCheckCircle style={{color:"green"}} /></span>
+              
               <p> {job.name}</p>
             </div>
 
