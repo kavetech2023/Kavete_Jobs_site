@@ -24,7 +24,7 @@ const Edit = () => {
 
     const handleMoreInfo = async () => {
       try {
-        const processedData = await run(`Create a comprehensive CV for a position based on ${saved}. Include the following sections: Summary, Skills, Experience, Education, Projects, and Certifications. Tailor the CV to highlight some guessed Specific Skills or Achievements."`); // Assuming run exists to process the data
+        const processedData = await run(`Create a comprehensive CV for a position based on ${saved}. Include the following sections: Summary, Skills, Experience, Education, Projects, and Certifications with examples of made up companies. Tailor the CV to highlight some guessed Specific Skills or Achievements."`); // Assuming run exists to process the data
         const formattedData = formatData(processedData); // Assuming formatData exists to format the data
   
         setMoreInfoData(formattedData);
