@@ -11,13 +11,17 @@ const Job = ({ setNotification }) => {
   const { jobId } = useParams();
   const [jobData, setJobData] = useState({});
   const [savedJobs, setSavedJobs] = useState("Add to Cv");
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const saveJob = () => {
     setNotification(+1);
     setSavedJobs("Added to Cv");
-    open? setOpen(false): setOpen(true);
+    
   };
+
+  const popup = () => {
+    open? setOpen(false): setOpen(true);
+  }
 
   const componentRef = useRef();
   const handlePrintRTP = useReactToPrint({
@@ -104,7 +108,7 @@ const Job = ({ setNotification }) => {
               <button
                 onClick={() => {
                   setSaved(jobData[jobId - 1].contents);
-                  saveJob();
+                  saveJob(); popup();
                 }}
               >
                 <span>
