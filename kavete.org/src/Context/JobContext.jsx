@@ -8,9 +8,7 @@ const JobContextProvider = (props) =>{
 
     const [allJobs, setAllJobs] = useState([])
     const [jobs, setJobs] = useState([]);
-    const [category, setCategory] = useState(
-        categories.map((job) => job.category)
-    );
+    const [category, setCategory] = useState("Design%20and%20UX");
     const [page, setPage] = useState(1);
     const [level, setJobLevel] = useState("")
     const [saved, setSaved] = useState("");

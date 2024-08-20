@@ -46,10 +46,11 @@ const Home = () => {
         </p>
         <form>
         <select onChange={categoryHandler} value={category}>
-            <option defaultValue={"Accounting%20and%20Finance"} >Select Job Category</option>
+            <option defaultValue={"Design%20and%20UX"} >Select Job Category</option>
             {categories.map((category, index) => (
               <option key={index}  value={category}>{category.replace(/%20/g, " ")}</option>
             ))}
+
           </select>
 
   <select onChange={levelHandler} value={level}>
