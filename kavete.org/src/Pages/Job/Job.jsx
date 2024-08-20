@@ -11,10 +11,12 @@ const Job = ({ setNotification }) => {
   const { jobId } = useParams();
   const [jobData, setJobData] = useState({});
   const [savedJobs, setSavedJobs] = useState("Add to Cv");
+  const [open, setOpen] = useState(false);
 
   const saveJob = () => {
     setNotification(+1);
     setSavedJobs("Added to Cv");
+    open? setOpen(false): setOpen(true);
   };
 
   const componentRef = useRef();
@@ -117,6 +119,18 @@ const Job = ({ setNotification }) => {
             Download Job
           </button>
             </div>
+
+            <div id="popup1" className={`overlay ${open?"": "overlay-open"}`}>
+	<div className="popup">
+		<h2>Job Added Successfully</h2>
+		<a className="close" onClick={()=>open?setOpen(false): setOpen(true)} href="#">&times;</a>
+		<div className="content">
+			This job has been added to your Cv and Cover Letter. You can update you can now update your Cv and Cover Letter using this Job Details.
+		</div>
+	</div>
+</div>
+
+
           </>
         ) : (
           <p>No job data available</p>
