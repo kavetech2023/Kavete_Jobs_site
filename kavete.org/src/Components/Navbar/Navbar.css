@@ -56,6 +56,12 @@
     border:none;
     cursor: pointer;
 }
+.navbar button:hover{
+    background-color: #eee;
+}
+.navbar button:active{
+    background: white;
+}
 .navbar button span{
     width: 13px;
 }
