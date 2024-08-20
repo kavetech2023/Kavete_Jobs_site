@@ -129,7 +129,7 @@ const Job = ({ setNotification }) => {
 		<h2>Job Added Successfully</h2>
 		<a className="close" onClick={()=>open?setOpen(false): setOpen(true)} href="#">&times;</a>
 		<div className="content">
-			This job has been added to your Cv and Cover Letter. You can update you can now update your Cv and Cover Letter using this Job Details.
+			This job has been added to your Cv and Cover Letter. You can now update your Cv and Cover Letter.
 		</div>
 	</div>
 </div>
