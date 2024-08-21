@@ -89,7 +89,7 @@ const Job = ({ setNotification }) => {
               <ul>
                
                 <li>
-                  <Link style={{color:"blue"}} to={`${jobData[jobId - 1].refs.landing_page}`}>Click Here for the Job Link</Link>
+                  <Link style={{color:"blue"}} to={`${jobData[jobId - 1].refs.landing_page}`}>Click Here for the Job</Link>
                 </li>
               </ul>
             </div>
