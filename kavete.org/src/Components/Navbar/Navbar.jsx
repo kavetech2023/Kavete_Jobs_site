@@ -47,7 +47,7 @@ const Navbar = ({notification}) => {
         </Link>
       </ul>
       <div className="nav-right">
-            <Link to={"/auth"} className="user-profile">
+            <div className="user-profile">
               <div className="dropdown">
                 <div className={`notification ${notification? "":"display"}`}>{notification}</div>
               <img src="https://via.placeholder.com/150" alt="" />
@@ -56,10 +56,10 @@ const Navbar = ({notification}) => {
                 
               </div>
               </div>   
-            </Link>
+            </div>
 
 
-          <button className="country-button">Donate</button>
+          <button className="country-button">My Info</button>
           <button className="menu-button" onClick={toggleSidebar}>{text}</button>
           
       </div>
