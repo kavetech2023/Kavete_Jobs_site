@@ -68,7 +68,7 @@ const Home = () => {
         <div className="table-layout no-hover">
           <p><b>#</b></p>
           <p><b>Job Title</b></p>
-          <p><b>Location</b></p>
+          <p className="job-location"><b>Location</b></p>
           <p className="ta"><b>Company</b></p>
           <p className="job-peak"><b>Date</b></p>
         </div>
@@ -80,7 +80,7 @@ const Home = () => {
               <p> {job.name}</p>
             </div>
 
-            <p>{job.locations.length > 0 ? job.locations[0].name : 'No location available'}</p>
+            <p className="job-location">{job.locations.length > 0 ? job.locations[0].name : 'No location available'}</p>
             <p className="ta">{job.company.name}</p>
             <p className="job-peak">{new Date(job.publication_date).toLocaleDateString()}</p>
           </Link>

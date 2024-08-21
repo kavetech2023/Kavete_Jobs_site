@@ -101,7 +101,7 @@
     .table-layout{
         grid-template-columns: 0.5fr 2fr 1fr 1fr;
     }
-    .job-peak{
+    .job-location{
         display: none;
     }
 }
