@@ -22,6 +22,7 @@ const JobContextProvider = (props) =>{
             .then(response => response.json());
              setAllJobs(response)
              setJobs(response.results)
+        
           console.log('Jobs fetched:', response.results, category);
         } catch (error) {
           console.error('Error fetching jobs:', error);
