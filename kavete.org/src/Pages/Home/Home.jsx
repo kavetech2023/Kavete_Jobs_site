@@ -48,7 +48,7 @@ const Home = () => {
         <select onChange={categoryHandler} value={category}>
             <option defaultValue={"Design%20and%20UX"} >Select Job Category</option>
             {categories.map((category, index) => (
-              <option key={index}  value={category}>{category.replace(/%20/g, " ").replace(/%2F/g, "/")}</option>
+              <option key={index}  value={category}>{category.replace(/%20/g, " ").replace(/%2F/g, "/").replace(/%2C/g, "")}</option>
             ))}
 
           </select>
