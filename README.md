@@ -1,33 +1,26 @@
-# Kavete_Jobs_site
+## README: Kavete Jobs
 
-README: Kavete Jobs
-Overview
+### Overview
 Kavete Jobs is a web platform designed to connect job seekers with potential employers in Kenya. It offers a user-friendly interface for both employers to post job openings and for job seekers to search and apply for relevant positions.
 
-Features
-Job Posting: Employers can create detailed job listings, including job title, description, requirements, location, and salary.
-Job Search: Job seekers can search for jobs based on keywords, location, industry, and other criteria.
-Candidate Profiles: Job seekers can create comprehensive profiles showcasing their skills, experience, and education.
-Application Process: Job seekers can directly apply to job postings, attaching their resumes and cover letters.
-Employer Dashboard: Employers can manage their job postings, view candidate applications, and communicate with applicants.
-Messaging System: A built-in messaging system allows employers and job seekers to communicate directly.
-Technology Stack
-Frontend: HTML, CSS, JavaScript (React or Vue)
-Backend: Python (Django or Flask)
-Database: PostgreSQL or MySQL
-Hosting: Heroku, AWS, or Google Cloud Platform
-Installation and Setup
-Clone the repository:
-Bash
-git clone https://github.com/your-username/kavete-jobs.git
-Use code with caution.
+### Features
+* **Job Posting:** Employers can create detailed job listings, including job title, description, requirements, location, and salary.
+* **Job Search:** Job seekers can search for jobs based on keywords, location, industry, and other criteria.
+* **Candidate Profiles:** Job seekers can create comprehensive profiles showcasing their skills, experience, and education.
+* **Application Process:** Job seekers can directly apply to job postings, attaching their resumes and cover letters.
+* **Employer Dashboard:** Employers can manage their job postings, view candidate applications, and communicate with applicants.
+* **Messaging System:** A built-in messaging system allows employers and job seekers to communicate directly.
 
-Create a virtual environment:
-Bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-Use code with caution.
+### Technology Stack
+* **Frontend:** HTML, CSS, JavaScript (React or Vue)
+* **Backend:** Python (Django or Flask)
+* **Database:** PostgreSQL or MySQL
+* **Hosting:** Heroku, AWS, or Google Cloud Platform
 
+### Installation and Setup
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/your-username/kavete-jobs.git](https://github.com/your-username/kavete-jobs.git)
 Install dependencies:
 Bash
 pip install -r requirements.txt   
