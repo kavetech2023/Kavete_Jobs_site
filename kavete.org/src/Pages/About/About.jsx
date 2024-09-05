@@ -37,7 +37,7 @@ const About = () => {
     </div>
     </div>
     <div className={`video-player ${playVideo?"":"hide"}`} ref={player} onClick={closePlayer}>
-    <iframe width="90%"  height="90%" className="video" src="https://youtu.be/vkdLST5UkEQ" title="YouTube video player" ></iframe>
+    <iframe width="560" className="video" height="315" src="https://www.youtube.com/embed/vkdLST5UkEQ?si=E4k_uPh6jScaMGxH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
     </div>
   )
